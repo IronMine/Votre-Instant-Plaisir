@@ -1,0 +1,220 @@
+/* BASE */
+
+#header-top {
+    background-color: brown;
+    margin-left: 280px;
+    color: white;
+    font-weight: 700;
+    font-size: 60px;
+    display: flex;
+    align-items: center;
+    height: auto;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+#header_search {
+    margin-left: auto;
+}
+
+.header-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 280px;
+    height: 100%;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+#header_icones a {
+    display: inline-block;
+    font-size: 13px;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    line-height: 45px;
+    text-align: center;
+    align-items: center;
+    vertical-align: center;
+}
+
+.svg_header_top {
+    vertical-align: middle;
+}
+
+#header_icones a:hover {
+    background-color: #f6b133 !important;
+}
+
+#header_icones {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#header_top,
+#main,
+#footer {
+    padding-left: 280px;
+}
+
+#header_menu {
+    text-decoration: none;
+    transition: all 0.3s;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 3px;
+    font-weight: 900;
+    text-align: center !important;
+    color: #fff !important;
+}
+
+#header_menu a {
+    text-decoration: none;
+}
+
+#header_clickncollect {
+    line-height: 50px;
+    text-align: center;
+    height: 50px;
+    background-color: #f6b133;
+    color: #fff !important;
+    transition: all 0.3s;
+}
+
+#header_clickncollect:hover {
+    background-color: #7a1e23;
+}
+
+
+/* BASE */
+
+#carte {
+    padding: 20px;
+    box-shadow: 0 2px 9px 0 rgb(0 0 0 / 5%);
+    background-color: white;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#content {
+    width: 60vw;
+    margin: auto;
+}
+
+#content-title {
+    text-align: center;
+    color: rgb(231, 79, 15);
+    font-size: 70px;
+    font-weight: 700;
+}
+
+#container-title {
+    color: rgb(231, 79, 15);
+    font-size: 40px;
+    font-weight: 700;
+}
+
+#table-left {
+    width: 50%;
+    float: left;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    background-color: #cecece;
+}
+
+h1 {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#table-right {
+    width: 50%;
+}
+
+p {
+    margin: 0;
+}
+
+td {
+    padding: 5px 10px;
+}
+
+td.new {
+    padding: 5px 0;
+    vertical-align: top;
+}
+
+.prix {
+    vertical-align: top;
+}
+
+#prix-bieres {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    column-gap: 30px;
+    row-gap: 40px;
+}
+
+#td-prix-bieres {
+    width: 40%;
+}
+
+#prix-biere::before {
+    content: "";
+    width: 86px;
+    height: 42px;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border: 7px solid black;
+    border-bottom: 0;
+    position: absolute;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#prix-biere::after {
+    content: "";
+    width: 86px;
+    height: 42px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    border: 7px solid black;
+    position: absolute;
+    border-top: 0;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/* .article {
+    width: 300px;
+} */
+
+td.new>div {
+    background-color: rgb(231, 79, 15);
+    color: white;
+}
+
+tr.new::before {
+    content: "NEW";
+    display: table-cell;
+    background-color: red;
+}

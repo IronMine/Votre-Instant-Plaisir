@@ -1,0 +1,311 @@
+{% extends 'base_riorges.html.twig' %}
+
+{% block title %}Hello RiorgesController!{% endblock %}
+
+{% block body %}
+<main>
+        <div id="main">
+            <input type="checkbox" name="hh" id="hh" onclick="HappyHour()">
+            
+         
+            <div id="Happy-Hour"></div>
+            <div id="Happy-Hour-timer"></div>
+
+            <div id="content">
+                <div id="content-title">
+                    BIERES
+                </div>
+                <div id="carte">
+                    <table id="table-left">
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    <div id="container-title">PRESSIONS</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+
+                                </td>
+                                <td>
+                                    <p><span><strong>BLONDE PILS</strong> 5.2°</span></p>
+
+                                </td>
+                                <td rowspan="10" id="td-prix-bieres">
+                                    <div id="prix-bieres">
+                                        <div id="prix-biere">
+                                            <p style="font-size: 30px;" id="1"><strong>4€</strong></p>
+                                            <p style="font-size: 30px; display: none;" id="5"><strong>2€</strong></p>
+                                            <p>25cl</p>
+                                        </div>
+                                        <div id="prix-biere">
+                                            <p style="font-size: 30px;" id="2"><strong>8€</strong></p>
+                                            <p style="font-size: 30px; display: none;" id="6"><strong>4€</strong></p>
+
+                                            <p>50cl</p>
+                                        </div>
+                                        <div id="prix-biere">
+                                            <p style="font-size: 30px;" id="3"><strong>22€</strong></p>
+                                            <p style="font-size: 30px; display: none;" id="7"><strong>11€</strong></p>
+
+                                            <p>1.5L</p>
+                                        </div>
+                                        <div id="prix-biere">
+                                            <p style="font-size: 30px;" id="4"><strong>42€</strong></p>
+                                            <p style="font-size: 30px; display: none;" id="8"><strong>21€</strong></p>
+
+                                            <p>3L</p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <p><span><strong>TIGRESSE BLANCHE</strong> 4°</span></p>
+
+                                </td>
+
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <p><span><strong>TIGRESSE IPA</strong></span></p>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+
+                                    </td>
+                                    <td>
+                                        <p><span><strong>TIGRESSE AMBRÉE</strong></span></p>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <p><span><strong>ORBITAL NEIPA</strong> IBU 30 - 7°</span></p>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <p><span><strong>DELIRIUM TREMENS</strong> 8.5°</span></p>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <p><span><strong>DELIRIUM RED</strong> 8.5°</span></p>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <p><span><strong>BLEU MÉTAL</strong> IBU 20 - 8°</span></p>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <p><span><strong>ORANGE MÉCANIQUE</strong> IBU 20 - 8°</span></p>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <p><span><strong>GUINESS BRUNE</strong> IBU 40 - 4.2°</span></p>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td></td>
+                                    <td colspan="2">
+                                        <div id="container-title">MOJITO</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <p><span><strong>ROSITO</strong></span></p>
+                                        <p><span style="font-size:12px;">Rosé 12cl, jus de fraise, Sprite, menthe fraîche et citron vert</span></p>
+                                    </td>
+                                    <td class="prix">
+                                        5€
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <p><span><strong>MOJITO</strong> (aux fruits framboise ou passion +1€)</span></p>
+                                        <p><span style="font-size:12px;">Bacardi ORO 4cl, menthe fraîche, citron vert, sucre de canne et Perrier</span></p>
+                                    </td>
+                                    <td class="prix">
+                                        8€
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="new">
+                                        <div>NEW</div>
+                                    </td>
+                                    <td>
+                                        <p><span><strong>MOLIRIUM</strong></span></p>
+                                        <p><span style="font-size:12px;">Rosé 12cl, jus de fraise, Sprite, menthe fraîche et citron vert</span></p>
+                                    </td>
+                                    <td class="prix">
+                                        5€
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <p><span><strong>ROSITO</strong></span></p>
+                                        <p><span style="font-size:12px;">Rosé 12cl, jus de fraise, Sprite, menthe fraîche et citron vert</span></p>
+                                    </td>
+                                    <td class="prix">
+                                        5€
+                                    </td>
+                                </tr>
+                        </tbody>
+                    </table>
+                    <table id="table-right">
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    <div id="container-title">RHUM</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <p><span><strong>PINA COLADA</strong></span></p>
+                                    <p><span style="font-size:12px;">Bacardi Carta Oro 4cl, purée de coco, jus d'ananas</span></p>
+                                </td>
+                                <td class="prix">
+                                    5€
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    <div id="container-title">VODKA</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <p><span><strong>SEX ON THE VIP</strong></span></p>
+                                    <p><span style="font-size:12px;">Eristoff 3cl, Malibu 1cl, crème de pêche 2cl, jus d'orange et jus de cranberry</span></p>
+                                </td>
+                                <td class="prix">
+                                    8€
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <p><span><strong>GRAND FIZZ</strong></span></p>
+                                    <p><span style="font-size:12px;">Grey Goose 4cl, St Germain 2cl, jus de citron vert et perrier</span></p>
+                                </td>
+                                <td class="prix">
+                                    12€
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    <div id="container-title">TEQUILA</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <p><span><strong>EL DIABLO</strong></span></p>
+                                    <p><span style="font-size:12px;">Patron silver 4cl, crème de cassis 2cl, jus citron vert et ginger beer</span></p>
+                                </td>
+                                <td class="prix">
+                                    12€
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    <div id="container-title">MULE</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <p><span><strong>MOSCOW MULE</strong></span></p>
+                                    <p><span style="font-size:12px;">Eristoff 4cl, ginger beer et quartiers de citron vert</span></p>
+                                </td>
+                                <td>
+                                    8€
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <p><span><strong>LONDON MULE</strong></span></p>
+                                    <p><span style="font-size:12px;">Bombay Sapphire 4cl, ginger beer et quartiers de citron vert</span></p>
+                                </td>
+                                <td class="prix">
+                                    10€
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <p><span><strong>CARRIBEAN MULE</strong></span></p>
+                                    <p><span style="font-size:12px;">Bocatheva Jamaique et Barbade 4cl, ginger beer et quartiers de citron vert</span></p>
+                                </td>
+                                <td class="prix">
+                                    10€
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <p><span><strong>GREYGOOSE MULE</strong></span></p>
+                                    <p><span style="font-size:12px;">Vodka Grey Goose 4cl, ginger beer et quartiers de citron vert</span></p>
+                                </td>
+                                <td class="prix">
+                                    12€
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <p><span><strong>GREYGOOSE MULE</strong></span></p>
+                                    <p><span style="font-size:12px;">Vodka Grey Goose 4cl, ginger beer et quartiers de citron vert</span></p>
+                                </td>
+                                <td class="prix">
+                                    12€
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <p><span><strong>GREYGOOSE MULE</strong></span></p>
+                                    <p><span style="font-size:12px;">Vodka Grey Goose 4cl, ginger beer et quartiers de citron vert</span></p>
+                                </td>
+                                <td class="prix">
+                                    12€
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="clock" onload="currentTime()"></div>
+    </main>
+{% endblock %}
