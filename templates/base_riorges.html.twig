@@ -7,6 +7,7 @@
 			{% endblock %}
 		</title>
 		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 		<link
 		rel="stylesheet" href="{{asset('css/riorges_style.css')}}">
@@ -22,8 +23,8 @@
 		{% endblock %}
 	</head>
 	<body>
-		<header>
-			<div id="header-top">RIORGES<div id="status"></div>
+	<header>
+			<div id="header-top">RIORGES <div id="status"></div>
 				<div id="header_search"></div>
 				<div id="header_icones">
 
@@ -76,11 +77,39 @@
 					<a href="">
 						<div id="header_clickncollect">EVENTS</div>
 					</a>
-
+					<div id="menu-link">
+						<a href="" id="link">BAR</a>
+						<a href="" id="link">CONTACT</a>
+					</div>
 				</div>
 			</div>
 		</header>
-		{% block body %}{% endblock %}
+		<div id="main_container"> {% block body %}{% endblock %}
+			</div>
+			<footer>
+				<div id="footer">
+					<div id="footer_top">
+						<ul>
+							<li>
+								<a class="lien_footer" href="/resto-pxl-47.html" target="_blank">RESTO</a>
+							</li>
+							<li>
+								<a class="lien_footer" href="/drinks-pxl-44.html" target="_blank">DRINKS</a>
+							</li>
+							<li>
+								<a class="lien_footer" href="/cave-xsl-411.html" target="_blank">CAVE</a>
+							</li>
+						</ul>
+						<ul>
+							<li><a class="lien_footer" href="#">CGV</a></li>
+							<li><a class="lien_footer" href="/mentions_legales.php">Mentions légales</a></li>
+							<li><a class="lien_footer" href="/politique_confidentialite.php">Politique de confidentialité</a></li>
+							<li><a class="lien_footer" href="/contact.php">Contact</a></li>
+						</ul>
+					</div>
+					<div id="footer_bottom">L'abus d'alcool est dangereux pour la santé. A consommer avec modération.</div>
+				</div>
+			</footer>
 		<script src="{{asset('js/riorges.js')}}"></script>
 	</body>
 </html>

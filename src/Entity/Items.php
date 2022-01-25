@@ -44,6 +44,26 @@ class Items
      */
     private $image;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $description;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $little_description;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $sell;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $position;
+
     public function __construct()
     {
         $this->image = new ArrayCollection();
@@ -128,6 +148,54 @@ class Items
                 $image->setItems(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function getLittleDescription(): ?string
+    {
+        return $this->little_description;
+    }
+
+    public function setLittleDescription(?string $little_description): self
+    {
+        $this->little_description = $little_description;
+
+        return $this;
+    }
+
+    public function getSell(): ?int
+    {
+        return $this->sell;
+    }
+
+    public function setSell(?int $sell): self
+    {
+        $this->sell = $sell;
+
+        return $this;
+    }
+
+    public function getPosition(): ?int
+    {
+        return $this->position;
+    }
+
+    public function setPosition(?int $position): self
+    {
+        $this->position = $position;
 
         return $this;
     }

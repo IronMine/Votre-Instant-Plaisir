@@ -44,10 +44,31 @@ class Categories
      */
     private $items;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Franchises::class, inversedBy="categories")
+     */
+    private $franchise;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Images::class, mappedBy="categories")
+     */
+    private $image;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $type;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $position;
+
     public function __construct()
     {
         $this->parent_id = new ArrayCollection();
         $this->items = new ArrayCollection();
+        $this->image = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -147,6 +168,72 @@ class Categories
                 $item->setCategorie(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getFranchise(): ?Franchises
+    {
+        return $this->franchise;
+    }
+
+    public function setFranchise(?Franchises $franchise): self
+    {
+        $this->franchise = $franchise;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Images[]
+     */
+    public function getImage(): Collection
+    {
+        return $this->image;
+    }
+
+    public function addImage(Images $image): self
+    {
+        if (!$this->image->contains($image)) {
+            $this->image[] = $image;
+            $image->setCategories($this);
+        }
+
+        return $this;
+    }
+
+    public function removeImage(Images $image): self
+    {
+        if ($this->image->removeElement($image)) {
+            // set the owning side to null (unless already changed)
+            if ($image->getCategories() === $this) {
+                $image->setCategories(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    public function setType(string $type): self
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    public function getPosition(): ?int
+    {
+        return $this->position;
+    }
+
+    public function setPosition(?int $position): self
+    {
+        $this->position = $position;
 
         return $this;
     }
