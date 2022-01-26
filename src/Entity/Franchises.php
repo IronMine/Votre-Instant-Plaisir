@@ -29,9 +29,20 @@ class Franchises
      */
     private $categories;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Items::class, mappedBy="franchise")
+     */
+    private $items;
+
+    /**
+     * @ORM\OneToOne(targetEntity=Type::class, mappedBy="franchise", cascade={"persist", "remove"})
+     */
+    private $type;
+
     public function __construct()
     {
         $this->categories = new ArrayCollection();
+        $this->items = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -77,6 +88,53 @@ class Franchises
                 $category->setFranchise(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Items[]
+     */
+    public function getItems(): Collection
+    {
+        return $this->items;
+    }
+
+    public function addItem(Items $item): self
+    {
+        if (!$this->items->contains($item)) {
+            $this->items[] = $item;
+            $item->setFranchise($this);
+        }
+
+        return $this;
+    }
+
+    public function removeItem(Items $item): self
+    {
+        if ($this->items->removeElement($item)) {
+            // set the owning side to null (unless already changed)
+            if ($item->getFranchise() === $this) {
+                $item->setFranchise(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getType(): ?Type
+    {
+        return $this->type;
+    }
+
+    public function setType(Type $type): self
+    {
+        // set the owning side of the relation if necessary
+        if ($type->getFranchise() !== $this) {
+            $type->setFranchise($this);
+        }
+
+        $this->type = $type;
 
         return $this;
     }

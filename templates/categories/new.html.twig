@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_admin.html.twig' %}
 
 {% block title %}New Categories{% endblock %}
 
@@ -8,6 +8,6 @@
     {{ include('categories/_form.html.twig') }}
 
     <a href="{{ path('categories_index') }}">back to list</a>
-    <script src="{{asset('js/admin.js')}}"></script>
+   
 
 {% endblock %}

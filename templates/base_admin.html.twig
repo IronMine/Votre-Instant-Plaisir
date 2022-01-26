@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+		<link rel="stylesheet" href="{{asset('css/admin_style.css')}}">
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+		
+
+
+		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
+
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+		{% endblock %}
+	</head>
+	<body>
+		<header>
+			<div id="header-top">
+				<div id="header_search"></div>
+				<div id="header_icones">
+
+					<a href="https://www.brasserie-vip.com/magasins.php">
+						<svg aria-hidden="true" data-prefix="fal" class="svg_header_top" data-icon="map-marker-alt" height="25px" role="img" color="white" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512" class="svg-inline--fa fa-map-marker-alt fa-w-12 fa-7x">
+							<path fill="currentColor" d="M192 96c-52.935 0-96 43.065-96 96s43.065 96 96 96 96-43.065 96-96-43.065-96-96-96zm0 160c-35.29 0-64-28.71-64-64s28.71-64 64-64 64 28.71 64 64-28.71 64-64 64zm0-256C85.961 0 0 85.961 0 192c0 77.413 26.97 99.031 172.268 309.67 9.534 13.772 29.929 13.774 39.465 0C357.03 291.031 384 269.413 384 192 384 85.961 298.039 0 192 0zm0 473.931C52.705 272.488 32 256.494 32 192c0-42.738 16.643-82.917 46.863-113.137S149.262 32 192 32s82.917 16.643 113.137 46.863S352 149.262 352 192c0 64.49-20.692 80.47-160 281.931z" class=""></path>
+						</svg>
+					</a>
+					<div id="shop-tooltip" class="tooltip" style="display: none;">
+						<div class="tooltip-top"></div>
+						<div class="tooltip-middle">
+							<div class="tooltip-content">
+								<a href="https://www.brasserie-vip.com/magasins.php">
+									<span class="sa-button">
+										<span class="button-label">Choisir ce restaurant</span>
+									</span>
+								</a>
+
+							</div>
+							<div class="tooltip-bottom"></div>
+						</div>
+					</div>
+
+
+					<a href="">
+						<svg aria-hidden="true" data-prefix="fal" class="svg_header_top" data-icon="map-marker-alt" height="25px" role="img" color="white" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512" class="svg-inline--fa fa-map-marker-alt fa-w-12 fa-7x">
+							<path fill="currentColor" d="M192 96c-52.935 0-96 43.065-96 96s43.065 96 96 96 96-43.065 96-96-43.065-96-96-96zm0 160c-35.29 0-64-28.71-64-64s28.71-64 64-64 64 28.71 64 64-28.71 64-64 64zm0-256C85.961 0 0 85.961 0 192c0 77.413 26.97 99.031 172.268 309.67 9.534 13.772 29.929 13.774 39.465 0C357.03 291.031 384 269.413 384 192 384 85.961 298.039 0 192 0zm0 473.931C52.705 272.488 32 256.494 32 192c0-42.738 16.643-82.917 46.863-113.137S149.262 32 192 32s82.917 16.643 113.137 46.863S352 149.262 352 192c0 64.49-20.692 80.47-160 281.931z" class=""></path>
+						</svg>
+					</a>
+
+
+					<a href="">
+						<svg aria-hidden="true" data-prefix="fal" class="svg_header_top" data-icon="map-marker-alt" height="25px" role="img" color="white" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512" class="svg-inline--fa fa-map-marker-alt fa-w-12 fa-7x">
+							<path fill="currentColor" d="M192 96c-52.935 0-96 43.065-96 96s43.065 96 96 96 96-43.065 96-96-43.065-96-96-96zm0 160c-35.29 0-64-28.71-64-64s28.71-64 64-64 64 28.71 64 64-28.71 64-64 64zm0-256C85.961 0 0 85.961 0 192c0 77.413 26.97 99.031 172.268 309.67 9.534 13.772 29.929 13.774 39.465 0C357.03 291.031 384 269.413 384 192 384 85.961 298.039 0 192 0zm0 473.931C52.705 272.488 32 256.494 32 192c0-42.738 16.643-82.917 46.863-113.137S149.262 32 192 32s82.917 16.643 113.137 46.863S352 149.262 352 192c0 64.49-20.692 80.47-160 281.931z" class=""></path>
+						</svg>
+					</a>
+
+
+				</div>
+			</div>
+
+			<div class="header-left">
+				
+				<div id="header_menu">
+
+					<a href="">
+						<div id="header_clickncollect">GENILAC</div>
+					</a>
+					<a href="">
+						<div id="header_clickncollect">RIORGES</div>
+					</a>
+					<div id="menu-link">
+						<a href="" id="link">EVENTS</a>
+						<a href="" id="link">CONTACT</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div id="main_container"> {% block body %}{% endblock %}
+			</div>
+			 <script src="{{asset('js/admin.js')}}"></script>
+		</body>
+	</html>

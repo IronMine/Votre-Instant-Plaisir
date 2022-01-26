@@ -64,6 +64,11 @@ class Items
      */
     private $position;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Franchises::class, inversedBy="items")
+     */
+    private $franchise;
+
     public function __construct()
     {
         $this->image = new ArrayCollection();
@@ -196,6 +201,18 @@ class Items
     public function setPosition(?int $position): self
     {
         $this->position = $position;
+
+        return $this;
+    }
+
+    public function getFranchise(): ?Franchises
+    {
+        return $this->franchise;
+    }
+
+    public function setFranchise(?Franchises $franchise): self
+    {
+        $this->franchise = $franchise;
 
         return $this;
     }

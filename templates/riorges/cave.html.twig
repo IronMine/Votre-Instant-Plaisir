@@ -1,0 +1,13 @@
+{% extends 'base_riorges.html.twig' %}
+
+{% block title %}Hello CaveRiorgesController!{% endblock %}
+
+{% block body %}
+<div id="header_cave">CAVE</div>
+
+{% for categorie in categories %}
+    <pre>
+        {{ dump(categorie) }}
+    </pre>
+{% endfor %}
+{% endblock %}

@@ -29,6 +29,17 @@ class Type
      */
     private $items;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Franchises::class, inversedBy="type", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $franchise;
+
+    /**
+     * @ORM\OneToOne(targetEntity=Categories::class, mappedBy="type", cascade={"persist", "remove"})
+     */
+    private $categories;
+
     public function __construct()
     {
         $this->items = new ArrayCollection();
@@ -77,6 +88,35 @@ class Type
                 $item->setType(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getFranchise(): ?Franchises
+    {
+        return $this->franchise;
+    }
+
+    public function setFranchise(Franchises $franchise): self
+    {
+        $this->franchise = $franchise;
+
+        return $this;
+    }
+
+    public function getCategories(): ?Categories
+    {
+        return $this->categories;
+    }
+
+    public function setCategories(Categories $categories): self
+    {
+        // set the owning side of the relation if necessary
+        if ($categories->getType() !== $this) {
+            $categories->setType($this);
+        }
+
+        $this->categories = $categories;
 
         return $this;
     }

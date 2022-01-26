@@ -54,15 +54,17 @@ class Categories
      */
     private $image;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $type;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
     private $position;
+
+    /**
+     * @ORM\OneToOne(targetEntity=Type::class, inversedBy="categories", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $type;
 
     public function __construct()
     {
@@ -214,17 +216,6 @@ class Categories
         return $this;
     }
 
-    public function getType(): ?string
-    {
-        return $this->type;
-    }
-
-    public function setType(string $type): self
-    {
-        $this->type = $type;
-
-        return $this;
-    }
 
     public function getPosition(): ?int
     {
@@ -234,6 +225,18 @@ class Categories
     public function setPosition(?int $position): self
     {
         $this->position = $position;
+
+        return $this;
+    }
+
+    public function getType(): ?Type
+    {
+        return $this->type;
+    }
+
+    public function setType(Type $type): self
+    {
+        $this->type = $type;
 
         return $this;
     }

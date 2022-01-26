@@ -2,15 +2,16 @@
 
 #footer ul {
     list-style-type: none;
-  }
-  .lien_footer {
-      font-weight: 600;
+}
+
+.lien_footer {
+    font-weight: 600;
     text-decoration: none;
     color: white;
     text-transform: uppercase;
-  }
-  
-  #footer_top {
+}
+
+#footer_top {
     display: flex;
     flex-direction: row;
     padding: 30px 20px;
@@ -18,16 +19,16 @@
     font-size: 0.625em;
     line-height: 1.5;
     justify-content: space-between;
-  }
-  
-  #footer {
+}
+
+#footer {
     background-color: #000;
     border-top-style: none;
     font-weight: 500;
     color: #fff;
-  }
-  
-  #footer_bottom {
+}
+
+#footer_bottom {
     padding: 20px 0;
     border-bottom-style: none;
     text-align: center;
@@ -35,17 +36,17 @@
     height: 30px;
     vertical-align: middle;
     margin: auto;
-  }
-  
-  body {
+}
+
+body {
     margin: 0;
     padding: 0;
     background-color: #efefef;
     color: #303030;
     font-family: "Raleway", sans-serif;
-  }
-  
-  #header-top {
+}
+
+#header-top {
     background-color: brown;
     margin-left: 280px;
     color: white;
@@ -57,13 +58,18 @@
     padding-top: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
-  }
-  
-  #header_search {
+}
+
+.lien_socials {
+    text-decoration: none;
+    color: #ffa200;
+}
+
+#header_search {
     margin-left: auto;
-  }
-  
-  .header-left {
+}
+
+.header-left {
     position: fixed;
     top: 0;
     left: 0;
@@ -74,9 +80,9 @@
     padding: 20px;
     background-color: #fff;
     box-sizing: border-box;
-  }
-  
-  #header_icones a {
+}
+
+#header_icones a {
     display: inline-block;
     font-size: 13px;
     height: 45px;
@@ -86,40 +92,41 @@
     text-align: center;
     align-items: center;
     vertical-align: center;
-  }
-  
-  .svg_header_top {
+}
+
+.svg_header_top {
     vertical-align: middle;
-  }
-  
-  #header_icones a:hover {
+}
+
+#header_icones a:hover {
     background-color: #f6b133 !important;
-  }
-  
-  #header_icones {
+}
+
+#header_icones {
     display: flex;
     align-items: center;
-  }
-  
-  .logo {
+}
+
+.logo {
     text-align: center;
     margin-bottom: 15px;
-  }
-  
-  #header_top,
-  #footer,
-  #main_container {
+}
+
+#header_top,
+#main,
+#footer,
+#main_container {
     padding-left: 280px;
-  }
-  
-  #content {
+}
+
+#content {
     padding: 60px 0;
     width: 100%;
     max-width: 960px;
     margin: auto;
-  }
-  
-  #header_menu {
+}
+
+#header_menu {
     text-decoration: none;
     transition: all 0.3s;
     display: grid;
@@ -128,41 +135,48 @@
     font-weight: 900;
     text-align: center !important;
     color: #fff !important;
-  }
-  
-  #header_menu a {
+}
+
+#header_menu a {
     text-decoration: none;
-  }
-  
-  #menu-link {
+}
+
+#menu-link {
     display: flex;
     flex-direction: column;
     text-align: left;
-  }
-  
-  #link:hover {
+}
+
+#link:hover,
+.lien_socials:hover {
     color: #7a1e23;
     text-shadow: none;
-  }
-  
-  #link {
+}
+
+#link {
     padding: 10px 10px;
     color: black;
     display: inline-block;
-  }
-  
-  #header_clickncollect {
+}
+
+#header_clickncollect {
     line-height: 50px;
     text-align: center;
     height: 50px;
     background-color: #f6b133;
     color: #fff !important;
     transition: all 0.3s;
-  }
-  
-  #header_clickncollect:hover {
+}
+
+#header_clickncollect:hover {
     background-color: #7a1e23;
-  }
+}
+
+#socials {
+    margin: 10px 0;
+    padding: 20px 0 0 0;
+    border-top: black 1px solid;
+}
 
 
 /* BASE */
@@ -274,7 +288,7 @@ td.new {
 
 
 /* .article {
-    width: 300px;
+width: 300px;
 } */
 
 td.new>div {
@@ -286,4 +300,22 @@ tr.new::before {
     content: "NEW";
     display: table-cell;
     background-color: red;
+}
+
+#header_cave {
+    background-image: url(https://www.brasserie-vip.com/images/Image/cave%20bandeau.jpg);
+    height: 245px;
+    background-color: #000;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+
+#header_cave::after {
+    background: radial-gradient(circle, rgba(0, 0, 0, .45) 0%, rgba(0, 0, 0, .7) 100%);
 }
