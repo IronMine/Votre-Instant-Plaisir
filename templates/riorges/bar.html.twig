@@ -1,0 +1,1391 @@
+{% extends 'base_riorges.html.twig' %}
+
+{% block title %}Hello RiorgesController!
+{% endblock %}
+
+{% block body %}
+	<main>
+
+
+
+		<div class="flex">
+			<div id="Happy-Hour"></div>
+			<div id="Happy-Hour-timer"></div>
+			<div id="Happy-Hour1"></div>
+		</div>
+
+{# 
+		<div id="nav-bar-carte">
+			<div class="nav-items active" onclick="movingbar(this,1)">BIERES</div>
+			<div class="nav-items" onclick="movingbar(this,2)">COCKTAILS</div>
+			<div class="nav-items" onclick="movingbar(this,3)">VINS,&nbsp;APERO,&nbsp;SOFT</div>
+			<div class="nav-items" onclick="movingbar(this)">ALCOOL&nbsp;FORT</div>
+			<div class="nav-items" onclick="movingbar(this)">DEGUSTATION</div>
+			<div class="nav-items" onclick="movingbar(this,6)">TAPAS</div>
+			<div class="nav-items" onclick="movingbar(this,7)">SKATES</div>
+		</div> #}
+		<table id="nav-bar-carte">
+			<tbody>
+				<tr>
+					<td class="nav-items active" onclick="movingbar(this,1)">BIERES</td>
+					<td class="nav-items" onclick="movingbar(this,2)">COCKTAILS</td>
+					<td class="nav-items" onclick="movingbar(this,3)">VINS,&nbsp;APERO,&nbsp;SOFT</td>
+					<td class="nav-items" onclick="movingbar(this,4)">ALCOOL&nbsp;FORT</td>
+					<td class="nav-items" onclick="movingbar(this,5)">DEGUSTATION</td>
+					<td class="nav-items" onclick="movingbar(this,6)">TAPAS</td>
+					<td class="nav-items" onclick="movingbar(this,7)">SKATES</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="moving-bar">
+			<div id="moving-bar"></div>
+		</div>
+		<div id="content">
+			<div id="1">
+			<input type="button" value="HAPPY HOUR" onclick="HappyHour()">
+				<div id="content-title">
+					BIERES
+				</div>
+				<div id="carte">
+					<table id="table-left">
+						<tbody>
+							<tr>
+								<td></td>
+								<td colspan="2">
+									<div id="container-title">PRESSIONS</div>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											BLONDE PILS	5.2°</span>
+									</p>
+
+								</td>
+								<td rowspan="10" id="td-prix-bieres">
+									<div id="prix-bieres">
+										<img src="/uploads/prix-bieres.svg" class="" width="100%">
+									</div>
+									<div id="prix-bieres-HH" style="display:none">
+										<img src="/uploads/prix-bieres-HH.svg" class="" width="100%">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											TIGRESSE BLANCHE 4°</span>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											TIGRESSE IPA
+										</span>
+									</p>
+								</td>
+
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											TIGRESSE AMBRÉE
+										</span>
+									</p>
+								</td>
+
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											ORBITAL NEIPA IBU 30 - 7°</span>
+									</p>
+								</td>
+
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											DELIRIUM TREMENS 8.5°</span>
+									</p>
+								</td>
+
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											DELIRIUM RED 8.5°</span>
+									</p>
+								</td>
+
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											BLEU MÉTAL IBU 20 - 8°</span>
+									</p>
+								</td>
+
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											ORANGE MÉCANIQUE IBU 20 - 8°</span>
+									</p>
+								</td>
+
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											GUINESS BRUNE IBU 40 - 4.2°</span>
+									</p>
+								</td>
+
+							</tr>
+
+							<tr>
+								<td></td>
+								<td colspan="2">
+									<div id="container-title">BLANCHE</div>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											BLANCHE DE NAMUR
+										</span>
+										<span class="description_produit">
+											33cl – IBU – 4.5°
+										</span>
+									</p>
+								</td>
+								<td class="prix">
+									5€
+								</td>
+							</tr>
+							<tr>
+								<td class="new">
+									<div>NEW</div>
+								</td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											FURTIVE
+										</span>
+										<span class="description_produit">
+											Brasserie Furieuse IBU 10 - 4,5° 33cl</span>
+									</p>
+
+								</td>
+								<td class="prix">
+									7€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											TCHIKI BOOM</span>
+										<span class="description_produit">Brasserie Bellafonte IBU 20 - 4,5° 33cl</span>
+									</p>
+								</td>
+								<td class="prix">
+									7€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td colspan="2">
+									<div id="container-title">BLONDE</div>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											CUVÉE DES TROLLS
+										</span>
+										<span class="description_produit">
+											25cl – IBU 19 – 7°
+										</span>
+									</p>
+								</td>
+								<td class="prix">
+									5€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											CHOUFFE BLONDE
+										</span>
+										<span class="description_produit">
+											33cl - IBU 50 - 8°
+										</span>
+									</p>
+
+								</td>
+								<td class="prix">
+									6€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											DESPÉRADOS</span>
+										<span class="description_produit">33cl 5,9°</span>
+									</p>
+								</td>
+								<td class="prix">
+									6€
+								</td>
+							</tr>
+
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											DUVEL</span>
+										<span class="description_produit">33cl - IBU 32 - 8,5°</span>
+									</p>
+								</td>
+								<td class="prix">
+									7€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											TRIPLE KARMELIET</span>
+										<span class="description_produit">33cl - IBU 16 – 8,4° –
+										</span>
+									</p>
+								</td>
+								<td class="prix">
+									7€
+								</td>
+							</tr>
+							<tr>
+								<td class="new">
+									<div>NEW</div>
+								</td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											BLONDE</span>
+										<span class="description_produit">Brasserie Germanoise – 33cl - IBU 20 - 5,9°</span>
+									</p>
+								</td>
+								<td class="prix">
+									7€
+								</td>
+							</tr>
+							<tr>
+								<td class="new">
+									<div>NEW</div>
+								</td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											FURIE BLONDE PALE ALE</span>
+										<span class="description_produit">Brasserie Furieuse – 33cl - IBU 20 - 5°</span>
+									</p>
+								</td>
+								<td class="prix">
+									7€
+								</td>
+							</tr>
+							<tr>
+								<td class="new">
+									<div>NEW</div>
+								</td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											SPACE GARDEN</span>
+										<span class="description_produit">Brasserie Orbital – 33cl - 5°</span>
+									</p>
+								</td>
+								<td class="prix">
+									7€
+								</td>
+							</tr>
+							<tr>
+								<td class="new">
+									<div>NEW</div>
+								</td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											TRIPLE</span>
+										<span class="description_produit">Brasserie Germanoise – 33cl - 8°</span>
+									</p>
+								</td>
+								<td class="prix">
+									7€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td colspan="2">
+									<div id="container-title">AMBREE</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="new">
+									<div>NEW</div>
+								</td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											QUINARELLE</span>
+										<span class="description_produit">Brasserie Stéphanoise – 33cl - 6°</span>
+									</p>
+								</td>
+								<td class="prix">
+									7€
+								</td>
+							</tr>
+							<tr>
+								<td class="new">
+									<div>NEW</div>
+								</td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											AMBRÉE</span>
+										<span class="description_produit">Brasserie Germanoise – 33cl - 8°</span>
+									</p>
+								</td>
+								<td class="prix">
+									7€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											TRIPLE</span>
+										<span class="description_produit">Brasserie Germanoise – 33cl - 8°</span>
+									</p>
+								</td>
+								<td class="prix">
+									7€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											BUSH AMBRÉE</span>
+										<span class="description_produit">33cl - IBU 25 – 12°</span>
+									</p>
+								</td>
+								<td class="prix">
+									7€
+								</td>
+							</tr>
+
+
+						</tbody>
+					</table>
+					<table id="table-right">
+						<tbody>
+							<tr>
+								<td></td>
+								<td colspan="2">
+									<div id="container-title">RHUM</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="new">
+									<div>NEW</div>
+								</td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											PINA COLADA
+										</span>
+									</p>
+									<p>
+										<span class="produit">Bacardi Carta Oro 4cl, purée de coco, jus d'ananas</span>
+									</p>
+								</td>
+								<td class="prix">
+									5€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td colspan="2">
+									<div id="container-title">VODKA</div>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											SEX ON THE VIP
+										</span>
+									</p>
+									<p>
+										<span class="produit">Eristoff 3cl, Malibu 1cl, crème de pêche 2cl, jus d'orange et jus de cranberry</span>
+									</p>
+								</td>
+								<td class="prix">
+									8€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											GRAND FIZZ
+										</span>
+									</p>
+									<p>
+										<span class="produit">Grey Goose 4cl, St Germain 2cl, jus de citron vert et perrier</span>
+									</p>
+								</td>
+								<td class="prix">
+									12€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td colspan="2">
+									<div id="container-title">TEQUILA</div>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											EL DIABLO
+										</span>
+									</p>
+									<p>
+										<span class="produit">Patron silver 4cl, crème de cassis 2cl, jus citron vert et ginger beer</span>
+									</p>
+								</td>
+								<td class="prix">
+									12€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td colspan="2">
+									<div id="container-title">MULE</div>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											MOSCOW MULE
+										</span>
+									</p>
+									<p>
+										<span class="produit">Eristoff 4cl, ginger beer et quartiers de citron vert</span>
+									</p>
+								</td>
+								<td class="prix">8€</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											LONDON MULE
+										</span>
+									</p>
+									<p>
+										<span class="produit">Bombay Sapphire 4cl, ginger beer et quartiers de citron vert</span>
+									</p>
+								</td>
+								<td class="prix">10€</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											CARRIBEAN MULE
+										</span>
+									</p>
+									<p>
+										<span class="produit">Bocatheva Jamaique et Barbade 4cl, ginger beer et quartiers de citron vert</span>
+									</p>
+								</td>
+								<td class="prix">
+									10€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											GREYGOOSE MULE
+										</span>
+									</p>
+									<p>
+										<span class="produit">Vodka Grey Goose 4cl, ginger beer et quartiers de citron vert</span>
+									</p>
+								</td>
+								<td class="prix">
+									12€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											GREYGOOSE MULE
+										</span>
+									</p>
+									<p>
+										<span class="produit">Vodka Grey Goose 4cl, ginger beer et quartiers de citron vert</span>
+									</p>
+								</td>
+								<td class="prix">
+									12€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											GREYGOOSE MULE
+										</span>
+									</p>
+									<p>
+										<span class="produit">Vodka Grey Goose 4cl, ginger beer et quartiers de citron vert</span>
+									</p>
+								</td>
+								<td class="prix">
+									12€
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div id="2" style="display:none">
+				<div id="content-title">
+					COCKTAILS
+				</div>
+				<div id="carte">
+					<table id="table-left">
+						<tbody>
+							<tr>
+								<td></td>
+								<td colspan="2">
+									<div id="container-title">SPRITZ</div>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">SPRITZ</span>
+									</p>
+									<p>
+										<span class="produit">Martini Fiero 4cl, Prosecco 6cl et Perrier</span>
+									</p>
+								</td>
+								<td class="prix">
+									6€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">LEMON SPRITZ</span>
+									</p>
+									<p>
+										<span class="produit">Martini Fiero 4cl, Prosecco 6cl et Perrier</span>
+									</p>
+								</td>
+								<td class="prix">
+									7€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">SOPLICA SPRITZ</span>
+									</p>
+									<p>
+										<span class="produit">Liqueur de citron cedraT 4cl, Prosecco 6cl et Perrier</span>
+									</p>
+								</td>
+								<td class="prix">
+									7€
+								</td>
+							</tr>
+							<tr>
+								<td class="new">
+									<div>NEW</div>
+								</td>
+								<td>
+									<p>
+										<span class="titre_produit">MELONADE SPRITZ</span>
+									</p>
+									<p>
+										<span class="produit">Melonade 4cl, Prosecco 6cl, sirpo de spritz et Perrier</span>
+									</p>
+								</td>
+								<td class="prix">
+									8€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">FRAGOLI SPRITZ</span>
+									</p>
+									<p>
+										<span class="produit">Liqueur de citron cedraT 4cl, Prosecco 6cl et Perrier</span>
+									</p>
+								</td>
+								<td class="prix">
+									7€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">SPRITZ A LA FRANCAISE</span>
+									</p>
+									<p>
+										<span class="produit">St Germain 4cl, Prosecco 6cl et Perrier</span>
+									</p>
+								</td>
+								<td class="prix">
+									7€
+								</td>
+							</tr>
+
+							<tr>
+								<td></td>
+								<td colspan="2">
+									<div id="container-title">MOJITO</div>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">ROSITO</span>
+									</p>
+									<p>
+										<span class="produit">Rosé 12cl, jus de fraise, Sprite, menthe fraîche et citron vert</span>
+									</p>
+								</td>
+								<td class="prix">
+									5€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">MOJITO (aux fruits framboise ou passion +1€)</span>
+									</p>
+									<p>
+										<span class="produit">Bacardi ORO 4cl, menthe fraîche, citron vert, sucre de canne et Perrier</span>
+									</p>
+								</td>
+								<td class="prix">
+									8€
+								</td>
+							</tr>
+							<tr>
+								<td class="new">
+									<div>NEW</div>
+								</td>
+								<td>
+									<p>
+										<span class="titre_produit">MOLIRIUM</span>
+									</p>
+									<p>
+										<span class="produit">Rosé 12cl, jus de fraise, Sprite, menthe fraîche et citron vert</span>
+									</p>
+								</td>
+								<td class="prix">
+									5€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">ROSITO</span>
+									</p>
+									<p>
+										<span class="produit">Rosé 12cl, jus de fraise, Sprite, menthe fraîche et citron vert</span>
+									</p>
+								</td>
+								<td class="prix">
+									5€
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table id="table-right">
+						<tbody>
+							<tr>
+								<td></td>
+								<td colspan="2">
+									<div id="container-title">RHUM</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="new">
+									<div>NEW</div>
+								</td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											PINA COLADA
+										</span>
+									</p>
+									<p>
+										<span class="produit">Bacardi Carta Oro 4cl, purée de coco, jus d'ananas</span>
+									</p>
+								</td>
+								<td class="prix">
+									5€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td colspan="2">
+									<div id="container-title">VODKA</div>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											SEX ON THE VIP
+										</span>
+									</p>
+									<p>
+										<span class="produit">Eristoff 3cl, Malibu 1cl, crème de pêche 2cl, jus d'orange et jus de cranberry</span>
+									</p>
+								</td>
+								<td class="prix">
+									8€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											GRAND FIZZ
+										</span>
+									</p>
+									<p>
+										<span class="produit">Grey Goose 4cl, St Germain 2cl, jus de citron vert et perrier</span>
+									</p>
+								</td>
+								<td class="prix">
+									12€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td colspan="2">
+									<div id="container-title">TEQUILA</div>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											EL DIABLO
+										</span>
+									</p>
+									<p>
+										<span class="produit">Patron silver 4cl, crème de cassis 2cl, jus citron vert et ginger beer</span>
+									</p>
+								</td>
+								<td class="prix">
+									12€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td colspan="2">
+									<div id="container-title">MULE</div>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											MOSCOW MULE
+										</span>
+									</p>
+									<p>
+										<span class="produit">Eristoff 4cl, ginger beer et quartiers de citron vert</span>
+									</p>
+								</td>
+								<td class="prix">
+									8€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											LONDON MULE
+										</span>
+									</p>
+									<p>
+										<span class="produit">Bombay Sapphire 4cl, ginger beer et quartiers de citron vert</span>
+									</p>
+								</td>
+								<td class="prix">
+									10€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											CARRIBEAN MULE
+										</span>
+									</p>
+									<p>
+										<span class="produit">Bocatheva Jamaique et Barbade 4cl, ginger beer et quartiers de citron vert</span>
+									</p>
+								</td>
+								<td class="prix">
+									10€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											GREYGOOSE MULE
+										</span>
+									</p>
+									<p>
+										<span class="produit">Vodka Grey Goose 4cl, ginger beer et quartiers de citron vert</span>
+									</p>
+								</td>
+								<td class="prix">
+									12€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											GREYGOOSE MULE
+										</span>
+									</p>
+									<p>
+										<span class="produit">Vodka Grey Goose 4cl, ginger beer et quartiers de citron vert</span>
+									</p>
+								</td>
+								<td class="prix">
+									12€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											GREYGOOSE MULE
+										</span>
+									</p>
+									<p>
+										<span class="produit">Vodka Grey Goose 4cl, ginger beer et quartiers de citron vert</span>
+									</p>
+								</td>
+								<td class="prix">
+									12€
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div id="3" style="display:none">
+				<div id="content-title">
+					VINS,&nbsp;APERO,&nbsp;SOFT
+				</div>
+				<div id="carte">
+					<table id="table-left">
+						<tbody>
+							<tr>
+								<td></td>
+								<td colspan="2">
+									<div id="container-title">VINS DU MOMENT</div>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_vins">ROUGE</span>
+									</p>
+
+								</td>
+								<td></td>
+								<td class="cl_vins">
+									75cl
+								</td>
+							</tr>
+
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">NARASSA
+										</span>
+										<span class="description_produit">Domaine Lafage</span>
+									</p>
+
+								</td>
+								<td></td>
+								<td class="prix">
+									25€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">ROI BOEUF
+										</span>
+										<span class="description_produit">Lionel Osmin &amp; Cie</span>
+									</p>
+
+								</td>
+								<td></td>
+								<td class="prix">
+									30€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">ST JOSEPH
+										</span>
+										<span class="description_produit">Domaine du chène</span>
+									</p>
+
+								</td>
+								<td></td>
+								<td class="prix">
+									33€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">MORGON
+										</span>
+										<span class="description_produit">Domaine Burrier</span>
+									</p>
+
+								</td>
+								<td></td>
+								<td class="prix">
+									35€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">THE SHERIFF
+										</span>
+										<span class="description_produit">Buena Vista, Etats Unis</span>
+									</p>
+
+								</td>
+								<td></td>
+								<td class="prix">
+									54€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_vins">BLANC</span>
+									</p>
+
+								</td>
+								<td></td>
+								<td class="cl_vins">
+									75cl
+								</td>
+							</tr>
+
+							<tr>
+								<td class="heart">
+									<div class="heart">VIP</div>
+								</td>
+								<td>
+									<p>
+										<span class="titre_produit">RENARD
+										</span>
+										<span class="description_produit">Domaine le Renard</span>
+									</p>
+
+								</td>
+								<td></td>
+								<td class="prix">
+									24€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">THE SHERIFF
+										</span>
+										<span class="description_produit">Afrique du Sud, Lionel Osmin &amp; Cie</span>
+									</p>
+
+								</td>
+								<td></td>
+								<td class="prix">
+									27€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td colspan="2">
+									<div id="container-title">CHAMPAGNE</div>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_vins">BLANC</span>
+									</p>
+
+								</td>
+								<td class="cl_vins">12cl</td>
+
+								<td class="cl_vins">75cl</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">PROSECCO
+										</span>
+
+									</p>
+
+								</td>
+								<td class="prix">4€</td>
+								<td class="prix">20€</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">MOSCATO
+										</span>
+
+									</p>
+
+								</td>
+								<td class="prix">8,90€</td>
+								<td class="prix">20€</td>
+							</tr>
+						</tbody>
+					</table>
+					<table id="table-right">
+						<tbody>
+							<tr>
+								<td></td>
+								<td colspan="2">
+									<div id="container-title">RHUM</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="new">
+									<div>NEW</div>
+								</td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											PINA COLADA
+										</span>
+									</p>
+									<p>
+										<span class="produit">Bacardi Carta Oro 4cl, purée de coco, jus d'ananas</span>
+									</p>
+								</td>
+								<td class="prix">
+									5€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td colspan="2">
+									<div id="container-title">VODKA</div>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											SEX ON THE VIP
+										</span>
+									</p>
+									<p>
+										<span class="produit">Eristoff 3cl, Malibu 1cl, crème de pêche 2cl, jus d'orange et jus de cranberry</span>
+									</p>
+								</td>
+								<td class="prix">
+									8€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											GRAND FIZZ
+										</span>
+									</p>
+									<p>
+										<span class="produit">Grey Goose 4cl, St Germain 2cl, jus de citron vert et perrier</span>
+									</p>
+								</td>
+								<td class="prix">
+									12€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td colspan="2">
+									<div id="container-title">TEQUILA</div>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											EL DIABLO
+										</span>
+									</p>
+									<p>
+										<span class="produit">Patron silver 4cl, crème de cassis 2cl, jus citron vert et ginger beer</span>
+									</p>
+								</td>
+								<td class="prix">
+									12€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td colspan="2">
+									<div id="container-title">MULE</div>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											MOSCOW MULE
+										</span>
+									</p>
+									<p>
+										<span class="produit">Eristoff 4cl, ginger beer et quartiers de citron vert</span>
+									</p>
+								</td>
+								<td class="prix">
+									8€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											LONDON MULE
+										</span>
+									</p>
+									<p>
+										<span class="produit">Bombay Sapphire 4cl, ginger beer et quartiers de citron vert</span>
+									</p>
+								</td>
+								<td class="prix">
+									10€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											CARRIBEAN MULE
+										</span>
+									</p>
+									<p>
+										<span class="produit">Bocatheva Jamaique et Barbade 4cl, ginger beer et quartiers de citron vert</span>
+									</p>
+								</td>
+								<td class="prix">
+									10€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											GREYGOOSE MULE
+										</span>
+									</p>
+									<p>
+										<span class="produit">Vodka Grey Goose 4cl, ginger beer et quartiers de citron vert</span>
+									</p>
+								</td>
+								<td class="prix">
+									12€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											GREYGOOSE MULE
+										</span>
+									</p>
+									<p>
+										<span class="produit">Vodka Grey Goose 4cl, ginger beer et quartiers de citron vert</span>
+									</p>
+								</td>
+								<td class="prix">
+									12€
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											GREYGOOSE MULE
+										</span>
+									</p>
+									<p>
+										<span class="produit">Vodka Grey Goose 4cl, ginger beer et quartiers de citron vert</span>
+									</p>
+								</td>
+								<td class="prix">
+									12€
+								</td>
+							</tr>
+
+							<tr>
+								<td></td>
+								<td>
+									<p>
+										<span class="titre_produit">
+											GREYGOOSE MULE
+										</span>
+									</p>
+									<p>
+										<span class="produit">Vodka Grey Goose 4cl, ginger beer et quartiers de citron vert</span>
+									</p>
+								</td>
+								<td class="prix">
+									12€
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div id="7" style="display: none;">
+				<div id="content-title">
+					NOS SKATES
+				</div>
+
+				<div id="skate">
+					<img src="/uploads/shooters.svg" class="shooters" width="100%">
+					<img src="/uploads/skates.svg" id="animation_skate" width="100%"></div>
+			</div>
+		</div>
+		<div id="clock" onload="currentTime()">05 : 01 : 37 1</div>
+	</div>
+</main>{% endblock %}

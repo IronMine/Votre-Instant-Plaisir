@@ -1,4 +1,384 @@
+/* BODY */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #efefef;
+    color: #303030;
+    font-family: "Raleway", sans-serif;
+}
+
+#content {
+    padding: 60px 0;
+    width: 100%;
+    margin: auto;
+    width: 70vw;
+}
+
+#carte {
+    padding: 20px;
+    box-shadow: 0 2px 9px 0 rgb(0 0 0 / 5%);
+    background-color: white;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#content-title {
+    text-align: center;
+    color: rgb(231, 79, 15);
+    font-size: 70px;
+    font-weight: 700;
+    font-family: 'Averta-Black', sans-serif;
+}
+
+#container-title {
+    color: rgb(231, 79, 15);
+    font-size: 40px;
+    font-weight: 700;
+}
+
+#table-left {
+    width: 50%;
+    float: left;
+}
+
+.transtition {
+    transition: 10s;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    background-color: #cecece;
+}
+
+h1 {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#table-right {
+    width: 50%;
+}
+
+p {
+    margin: 0;
+}
+
+td {
+    padding: 5px 10px;
+}
+
+td.new {
+    padding: 5px 0;
+    vertical-align: top;
+}
+
+.prix {
+    vertical-align: top;
+    font-weight: 900;
+}
+
+#td-prix-bieres {
+    width: 40%;
+}
+
+
+/* .article {
+width: 300px;
+} */
+
+td.new>div {
+    background-color: rgb(231, 79, 15);
+    color: white;
+    padding: 5px;
+    font-weight: 700;
+}
+
+tr.new::before {
+    content: "NEW";
+    display: table-cell;
+    background-color: red;
+}
+
+#header_cave {
+    background-image: url(https://www.brasserie-vip.com/images/Image/cave%20bandeau.jpg);
+    height: 245px;
+    background-color: #000;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+
+#header_cave::after {
+    background: radial-gradient(circle, rgba(0, 0, 0, .45) 0%, rgba(0, 0, 0, .7) 100%);
+}
+
+.flex {
+    display: flex;
+}
+
+.titre_produit {
+    font-weight: 900;
+}
+
+.produit {}
+
+.nav-items {
+    font-family: 'Averta-Black', sans-serif;
+    text-align: center;
+    width: 1%;
+    height: 100%;
+    color: white;
+    font-size: 30px;
+    line-height: 70px;
+    font-weight: 800;
+    background-color: #f6b133;
+}
+
+.nav-items.active {
+    color: #7a1e23;
+    background-color: #f6b133;
+    transition: 0.5s;
+}
+
+#moving-bar {
+    height: 5px;
+    background-color: #7a1e23;
+    position: absolute;
+    transition: 0.5s;
+    left: 280px;
+}
+
+.moving-bar {}
+
+.description_produit {
+    font-style: italic;
+}
+
+
+/* SKATE */
+
+.shooters {}
+
+#animation_skate {
+    animation-name: skate;
+    /* animation-iteration-count: infinite; */
+    animation-duration: 4s;
+    animation-direction: normal;
+    position: relative;
+    bottom: 100px;
+}
+
+@keyframes skate {
+    from {
+        width: 50%;
+        opacity: 0;
+        transform: rotate(40deg);
+    }
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+#skate {
+    background-color: white;
+    /* text-align: center; */
+    font-family: 'Averta-Black', sans-serif;
+    padding: 10px;
+}
+
+#flex_skate {
+    display: flex;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+
+/* VINS */
+
+.cl_vins {
+    background-color: black;
+    color: white;
+    transform: rotate(-20deg);
+    padding: 0;
+    text-align: center;
+    padding: 0 10px;
+    /* display: inline-block; */
+    margin-right: 20px;
+    font-size: 15px;
+    position: absolute;
+    line-height: 15px;
+}
+
+.titre_vins {
+    color: rgb(231, 79, 15);
+    font-weight: 700;
+    margin: 10px 0;
+    font-size: 22px;
+}
+
+
+/* COEUR */
+
+.heart {
+    display: inline-block;
+    width: 200px;
+    aspect-ratio: 1;
+    border-image: radial-gradient(rgb(231, 79, 15) 69%, #0000 70%) 84.5% fill/100%;
+    clip-path: polygon(-41% 0, 50% 91%, 141% 0);
+    width: 40px;
+    padding: 0;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 700;
+    text-align: center;
+    color: white;
+}
+
+td.heart {
+    padding: 0;
+}
+
+@media all and (max-width:1790px) {
+    .nav-items {
+        font-size: 25px;
+    }
+}
+
+@media all and (max-width:1625px) {
+    #table-left {
+        width: 100%;
+        float: left;
+    }
+    #table-right {
+        width: 100%;
+    }
+    .prix {
+        text-align: right;
+        font-size: 20px;
+    }
+    .titre_produit {
+        font-size: 25px;
+    }
+    .produit {
+        font-size: 20px;
+    }
+    .nav-items {
+        font-size: 22px;
+    }
+}
+
+@media all and (max-width:1410px) {
+    .nav-items {
+        font-size: 20px;
+        line-height: 60px;
+    }
+    #nav-bar-carte {
+        height: 60px
+    }
+}
+
+@media all and (max-width:1320px) {
+    .nav-items {
+        font-size: 18px;
+        line-height: 55px;
+    }
+    #nav-bar-carte {
+        height: 55px
+    }
+}
+
+@media all and (max-width:1160px) {
+    .nav-items {
+        font-size: 20px;
+        line-height: 50px;
+    }
+    #nav-bar-carte {
+        height: 50px
+    }
+    ;
+    .titre_produit {
+        font-size: 25px;
+    }
+    .produit {
+        font-size: 20px;
+    }
+}
+
+
 /* BASE */
+
+
+/* MOBILE */
+
+#header_mobile_icon,
+#header_mobile {
+    display: none;
+}
+
+.menu-btn {
+    position: relative;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    /* border: 3px solid #fff; */
+}
+
+.menu-btn__burger {
+    width: 50px;
+    height: 6px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+    transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+    transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before {
+    transform: translateY(-16px);
+}
+
+.menu-btn__burger::after {
+    transform: translateY(16px);
+}
+
+.menu-btn.open .menu-btn__burger {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+}
+
+.menu-btn.open .menu-btn__burger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+}
+
+.menu-btn.open .menu-btn__burger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+}
+
+
+/* FOOTER */
 
 #footer ul {
     list-style-type: none;
@@ -38,13 +418,8 @@
     margin: auto;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #efefef;
-    color: #303030;
-    font-family: "Raleway", sans-serif;
-}
+
+/* HEADER */
 
 #header-top {
     background-color: brown;
@@ -82,31 +457,6 @@ body {
     box-sizing: border-box;
 }
 
-#header_icones a {
-    display: inline-block;
-    font-size: 13px;
-    height: 45px;
-    width: 45px;
-    border-radius: 50%;
-    line-height: 45px;
-    text-align: center;
-    align-items: center;
-    vertical-align: center;
-}
-
-.svg_header_top {
-    vertical-align: middle;
-}
-
-#header_icones a:hover {
-    background-color: #f6b133 !important;
-}
-
-#header_icones {
-    display: flex;
-    align-items: center;
-}
-
 .logo {
     text-align: center;
     margin-bottom: 15px;
@@ -117,13 +467,6 @@ body {
 #footer,
 #main_container {
     padding-left: 280px;
-}
-
-#content {
-    padding: 60px 0;
-    width: 100%;
-    max-width: 960px;
-    margin: auto;
 }
 
 #header_menu {
@@ -179,143 +522,175 @@ body {
 }
 
 
-/* BASE */
+/* HAPPY HOUR */
 
-#carte {
-    padding: 20px;
-    box-shadow: 0 2px 9px 0 rgb(0 0 0 / 5%);
-    background-color: white;
-    box-sizing: border-box;
-    overflow: hidden;
+#Happy-Hour,
+#Happy-Hour1,
+#Happy-Hour-timer {
+    font-size: 30px;
+    margin-right: 20px;
 }
 
-#content {
-    width: 60vw;
-    margin: auto;
+#Happy-Hour,
+#Happy-Hour1,
+#Happy-Hour-timer {
+    font-size: 30px;
+    margin-right: 20px;
 }
 
-#content-title {
+
+/* NAV-BAR */
+
+#header_icons a {
+    display: inline-block;
+    font-size: 13px;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    line-height: 45px;
     text-align: center;
-    color: rgb(231, 79, 15);
-    font-size: 70px;
-    font-weight: 700;
-}
-
-#container-title {
-    color: rgb(231, 79, 15);
-    font-size: 40px;
-    font-weight: 700;
-}
-
-#table-left {
-    width: 50%;
-    float: left;
-}
-
-body {
-    font-family: 'Raleway', sans-serif;
-    margin: 0;
-    background-color: #cecece;
-}
-
-h1 {
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-#table-right {
-    width: 50%;
-}
-
-p {
-    margin: 0;
-}
-
-td {
-    padding: 5px 10px;
-}
-
-td.new {
-    padding: 5px 0;
-    vertical-align: top;
-}
-
-.prix {
-    vertical-align: top;
-}
-
-#prix-bieres {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    text-align: center;
-    column-gap: 30px;
-    row-gap: 40px;
-}
-
-#td-prix-bieres {
-    width: 40%;
-}
-
-#prix-biere::before {
-    content: "";
-    width: 86px;
-    height: 42px;
-    border-top-left-radius: 100px;
-    border-top-right-radius: 100px;
-    border: 7px solid black;
-    border-bottom: 0;
-    position: absolute;
-    display: block;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-#prix-biere::after {
-    content: "";
-    width: 86px;
-    height: 42px;
-    border-bottom-left-radius: 100px;
-    border-bottom-right-radius: 100px;
-    border: 7px solid black;
-    position: absolute;
-    border-top: 0;
-    display: block;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-
-/* .article {
-width: 300px;
-} */
-
-td.new>div {
-    background-color: rgb(231, 79, 15);
-    color: white;
-}
-
-tr.new::before {
-    content: "NEW";
-    display: table-cell;
-    background-color: red;
-}
-
-#header_cave {
-    background-image: url(https://www.brasserie-vip.com/images/Image/cave%20bandeau.jpg);
-    height: 245px;
-    background-color: #000;
-    background-position: center;
-    background-size: cover;
-    color: white;
-    font-weight: 900;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 2em;
+    vertical-align: center;
 }
 
-#header_cave::after {
-    background: radial-gradient(circle, rgba(0, 0, 0, .45) 0%, rgba(0, 0, 0, .7) 100%);
+.svg_header_top {
+    vertical-align: middle;
+}
+
+#header_icons div:hover {
+    background-color: #f6b133 !important;
+    transition: 1s;
+}
+
+#header_icons {
+    display: flex;
+    align-items: center;
+}
+
+#header_icons div[id^='icon'] {
+    display: inline-block;
+    font-size: 13px;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    line-height: 45px;
+    text-align: center;
+    align-items: center;
+    vertical-align: center;
+}
+
+.svg_header_top {
+    vertical-align: middle;
+}
+
+#header_icons div:hover {
+    background-color: #f6b133 !important;
+    transition: 0.5s;
+}
+
+#header_icons {
+    display: flex;
+    align-items: center;
+}
+
+#map {
+    position: absolute;
+    z-index: 2;
+    height: 100px;
+    background-color: white;
+    top: 70px;
+}
+
+#map::before {
+    content: "";
+    background: #fff;
+    width: 10px;
+    height: 10px;
+    display: block;
+    -webkit-transform: rotate( 45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate( 45deg);
+    position: absolute;
+    top: -5px;
+    box-shadow: 0px 0px 8px 0px rgb(0 0 0 / 35%);
+}
+
+#nav-bar-carte {
+    text-align: center;
+    width: 100%;
+    height: 70px;
+    font-weight: 800;
+    font-size: 25px;
+    border-spacing: 0;
+}
+
+@media all and (max-width:1160px) {
+    .header-left {
+        display: none;
+    }
+    .menu-btn {
+        display: flex;
+    }
+    #main_container {
+        padding: 0;
+    }
+    #header-top {
+        margin: 0;
+    }
+    #content {
+        padding: 20px 0;
+        width: 100%;
+        margin: auto;
+        width: 90vw;
+    }
+    #footer {
+        padding: 0;
+    }
+    #moving-bar {
+        left: 0px;
+    }
+    #header_mobile_icon {
+        display: block;
+    }
+    #header_mobile {
+        position: absolute;
+        display: block;
+        transition: 1s;
+        left: -280px;
+        z-index: 1;
+        width: 280px;
+        height: 100%;
+        overflow-y: auto;
+        padding: 20px;
+        background-color: #fff;
+        box-sizing: border-box;
+        text-decoration: none;
+    }
+    #header_clickncollect_mobile {
+        line-height: 50px;
+        text-align: center;
+        height: 50px;
+        background-color: #f6b133;
+        color: #fff !important;
+        transition: all 0.3s;
+    }
+    #header_mobile a div {
+        margin-top: 10px
+    }
+    #header_mobile a {
+        text-decoration: none;
+        font-weight: 900;
+    }
+}
+
+
+/* FONT */
+
+@import url(//db.onlinewebfonts.com/c/2568bb80f5521d55c8c0d536d5bfa5cf?family=Averta-Black);
+@font-face {
+    font-family: "Averta-Black";
+    src: url("//db.onlinewebfonts.com/t/2568bb80f5521d55c8c0d536d5bfa5cf.eot");
+    src: url("//db.onlinewebfonts.com/t/2568bb80f5521d55c8c0d536d5bfa5cf.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/2568bb80f5521d55c8c0d536d5bfa5cf.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/2568bb80f5521d55c8c0d536d5bfa5cf.woff") format("woff"), url("//db.onlinewebfonts.com/t/2568bb80f5521d55c8c0d536d5bfa5cf.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/2568bb80f5521d55c8c0d536d5bfa5cf.svg#Averta-Black") format("svg");
 }

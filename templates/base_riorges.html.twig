@@ -8,9 +8,9 @@
 		</title>
 		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
 		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-		<link
-		rel="stylesheet" href="{{asset('css/riorges_style.css')}}">
+		<link href="//db.onlinewebfonts.com/c/2568bb80f5521d55c8c0d536d5bfa5cf?family=Averta-Black" rel="stylesheet" type="text/css"/>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow+Condensed">
+		<link rel="stylesheet" href="{{asset('css/riorges_style.css')}}">
 
 
 		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
@@ -23,46 +23,89 @@
 		{% endblock %}
 	</head>
 	<body>
-	<header>
-			<div id="header-top">RIORGES-<div id="status"></div>
-				<div id="header_search"></div>
-				<div id="header_icones">
+		<header>
 
-					<a href="https://www.brasserie-vip.com/magasins.php">
+			<div id="header-top">
+				<div class="menu-btn" onclick="mobileNavbar()">
+					<div class="menu-btn__burger"></div>
+				</div>RIORGES-<div id="status"></div>
+
+				<div id="header_search"></div>
+				<div id="header_icons">
+
+					<div id="icon_map">
+						<svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="user" class="svg-inline--fa fa-user fa-w-14" height="25px" role="img" color="white" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512">
+							<path fill="currentColor" d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z"></path>
+						</svg>
+					</div>
+					<div id="map" style="display:none">t</div>
+
+
+					<div id="icons">
 						<svg aria-hidden="true" data-prefix="fal" class="svg_header_top" data-icon="map-marker-alt" height="25px" role="img" color="white" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512" class="svg-inline--fa fa-map-marker-alt fa-w-12 fa-7x">
 							<path fill="currentColor" d="M192 96c-52.935 0-96 43.065-96 96s43.065 96 96 96 96-43.065 96-96-43.065-96-96-96zm0 160c-35.29 0-64-28.71-64-64s28.71-64 64-64 64 28.71 64 64-28.71 64-64 64zm0-256C85.961 0 0 85.961 0 192c0 77.413 26.97 99.031 172.268 309.67 9.534 13.772 29.929 13.774 39.465 0C357.03 291.031 384 269.413 384 192 384 85.961 298.039 0 192 0zm0 473.931C52.705 272.488 32 256.494 32 192c0-42.738 16.643-82.917 46.863-113.137S149.262 32 192 32s82.917 16.643 113.137 46.863S352 149.262 352 192c0 64.49-20.692 80.47-160 281.931z" class=""></path>
 						</svg>
-					</a>
-					<div id="shop-tooltip" class="tooltip" style="display: none;">
-						<div class="tooltip-top"></div>
-						<div class="tooltip-middle">
-							<div class="tooltip-content">
-								<a href="https://www.brasserie-vip.com/magasins.php">
-									<span class="sa-button">
-										<span class="button-label">Choisir ce restaurant</span>
-									</span>
-								</a>
-
-							</div>
-							<div class="tooltip-bottom"></div>
-						</div>
 					</div>
 
 
-					<a href="">
+					<div id="icons">
 						<svg aria-hidden="true" data-prefix="fal" class="svg_header_top" data-icon="map-marker-alt" height="25px" role="img" color="white" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512" class="svg-inline--fa fa-map-marker-alt fa-w-12 fa-7x">
 							<path fill="currentColor" d="M192 96c-52.935 0-96 43.065-96 96s43.065 96 96 96 96-43.065 96-96-43.065-96-96-96zm0 160c-35.29 0-64-28.71-64-64s28.71-64 64-64 64 28.71 64 64-28.71 64-64 64zm0-256C85.961 0 0 85.961 0 192c0 77.413 26.97 99.031 172.268 309.67 9.534 13.772 29.929 13.774 39.465 0C357.03 291.031 384 269.413 384 192 384 85.961 298.039 0 192 0zm0 473.931C52.705 272.488 32 256.494 32 192c0-42.738 16.643-82.917 46.863-113.137S149.262 32 192 32s82.917 16.643 113.137 46.863S352 149.262 352 192c0 64.49-20.692 80.47-160 281.931z" class=""></path>
 						</svg>
-					</a>
+					</div>
+				</div>
+			</div>
+			<div id="header_mobile">
+				<a href="{{ path('riorges_cave') }}">
+					<div id="header_clickncollect_mobile">CAVE</div>
+				</a>
+				<a href="{{ path('riorges_events') }}">
+					<div id="header_clickncollect_mobile">EVENTS</div>
+				</a>
+				<div id="menu-link">
+					<a href="{{ path('riorges_bar') }}" id="link">BAR</a>
+					<a href="{{ path('riorges_contact') }}" id="link">CONTACT</a>
+				</div>
+				<div id="header_socials">
+					<div id="socials">
+						<p>
+							<a class="lien_socials" href="https://www.facebook.com/votreinstantplaisir.vip" target="_blank">
+								<svg viewbox="0 0 732.81494 742.21136" height="40px">
+
+									<path fill="currentColor" d="m 485.54747,403.10568 14.22,-92.66 h -88.91 v -60.13 c 0,-25.35 12.42,-50.06 52.24,-50.06 h 40.42 v -78.89 c 0,0 -36.68,-6.26 -71.75,-6.26 -73.22,0 -121.08,44.38 -121.08,124.72 v 70.62 h -81.39 v 92.66 h 81.39 v 224 h 100.17 v -224 z" id="path2"/>
+									<ellipse style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:33.7196;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="path54" cx="366.40747" cy="371.10568" rx="349.54767" ry="354.24588"/>
+								</svg>
+							</a>
+							<a class="lien_socials" href="https://www.instagram.com/votreinstantplaisir.vip/" target="_blank">
+								<svg viewbox="0 0 735.98187 745.73511" height="40px">
+									<path fill="currentColor" d="m 368.04095,257.96757 c -63.6,0 -114.9,51.3 -114.9,114.9 0,63.6 51.3,114.9 114.9,114.9 63.6,0 114.9,-51.3 114.9,-114.9 0,-63.6 -51.3,-114.9 -114.9,-114.9 z m 0,189.6 c -41.1,0 -74.7,-33.5 -74.7,-74.7 0,-41.2 33.5,-74.7 74.7,-74.7 41.2,0 74.7,33.5 74.7,74.7 0,41.2 -33.6,74.7 -74.7,74.7 z m 146.4,-194.3 c 0,14.9 -12,26.8 -26.8,26.8 -14.9,0 -26.8,-12 -26.8,-26.8 0,-14.8 12,-26.8 26.8,-26.8 14.8,0 26.8,12 26.8,26.8 z m 76.1,27.2 c -1.7,-35.9 -9.9,-67.7 -36.2,-93.9 -26.2,-26.2 -58,-34.4 -93.9,-36.2 -37,-2.1 -147.9,-2.1 -184.9,0 -35.8,1.7 -67.6,9.9 -93.9,36.1 -26.3,26.2 -34.4,58 -36.2,93.9 -2.1,37 -2.1,147.9 0,184.9 1.7,35.9 9.9,67.7 36.2,93.9 26.3,26.2 58,34.4 93.9,36.2 37,2.1 147.9,2.1 184.9,0 35.9,-1.7 67.7,-9.9 93.9,-36.2 26.2,-26.2 34.4,-58 36.2,-93.9 2.1,-37 2.1,-147.8 0,-184.8 z m -47.8,224.5 c -7.8,19.6 -22.9,34.7 -42.6,42.6 -29.5,11.7 -99.5,9 -132.1,9 -32.6,0 -102.7,2.6 -132.1,-9 -19.6,-7.8 -34.7,-22.9 -42.6,-42.6 -11.7,-29.5 -9,-99.5 -9,-132.1 0,-32.6 -2.6,-102.7 9,-132.1 7.8,-19.6 22.9,-34.7 42.6,-42.6 29.5,-11.7 99.5,-9 132.1,-9 32.6,0 102.7,-2.6 132.1,9 19.6,7.8 34.7,22.9 42.6,42.6 11.7,29.5 9,99.5 9,132.1 0,32.6 2.7,102.7 -9,132.1 z" id="path2"/>
+									<ellipse style="opacity:1;fill:none;fill-opacity:1;stroke:currentColor;stroke-width:33.7196;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="path54" cx="368.07761" cy="372.95929" rx="349.54767" ry="354.24588"/>
+								</svg>
+							</a>
+							<a class="lien_socials" href="https://www.linkedin.com/company/brasserie-votre-instant-plaisir/?viewAsMember=true" target="_blank">
+								<svg height="40px" viewbox="0 0 732.81494 742.21136">
+									<path fill="currentColor" d="m 242.68747,595.10066 h -92.88 v -299.1 h 92.88 z m -46.49,-339.9 c -29.7,0 -53.79,-24.6 -53.79,-54.3 a 53.79,53.79 0 0 1 107.58,0 c 0,29.7 -24.1,54.3 -53.79,54.3 z m 394.11,339.9 h -92.68 v -145.6 c 0,-34.7 -0.7,-79.2 -48.29,-79.2 -48.29,0 -55.69,37.7 -55.69,76.7 v 148.1 h -92.78 v -299.1 h 89.08 v 40.8 h 1.3 c 12.4,-23.5 42.69,-48.3 87.88,-48.3 94,0 111.28,61.9 111.28,142.3 v 164.3 z" id="path2"/>
+									<ellipse style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:33.7196;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="path54" cx="366.40747" cy="371.10568" rx="349.54767" ry="354.24588"/>
+								</svg>
+							</a>
 
 
-					<a href="">
-						<svg aria-hidden="true" data-prefix="fal" class="svg_header_top" data-icon="map-marker-alt" height="25px" role="img" color="white" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512" class="svg-inline--fa fa-map-marker-alt fa-w-12 fa-7x">
-							<path fill="currentColor" d="M192 96c-52.935 0-96 43.065-96 96s43.065 96 96 96 96-43.065 96-96-43.065-96-96-96zm0 160c-35.29 0-64-28.71-64-64s28.71-64 64-64 64 28.71 64 64-28.71 64-64 64zm0-256C85.961 0 0 85.961 0 192c0 77.413 26.97 99.031 172.268 309.67 9.534 13.772 29.929 13.774 39.465 0C357.03 291.031 384 269.413 384 192 384 85.961 298.039 0 192 0zm0 473.931C52.705 272.488 32 256.494 32 192c0-42.738 16.643-82.917 46.863-113.137S149.262 32 192 32s82.917 16.643 113.137 46.863S352 149.262 352 192c0 64.49-20.692 80.47-160 281.931z" class=""></path>
-						</svg>
-					</a>
+							<a class="lien_socials" href="https://www.youtube.com/channel/UCycPYFjJ_E3rxG9PN3ksS3w" target="_blank">
+								<svg viewbox="0 0 732.81494 742.21136" height="40px">
+
+									<path fill="currentColor" d="m 628.06247,239.18868 c -6.281,-23.65 -24.787,-42.276 -48.284,-48.597 -42.59,-11.486 -213.371,-11.486 -213.371,-11.486 0,0 -170.78,0 -213.371,11.486 -23.497,6.322 -42.003,24.947 -48.284,48.597 -11.412001,42.867 -11.412001,132.305 -11.412001,132.305 0,0 0,89.438 11.412001,132.305 6.281,23.65 24.787,41.5 48.284,47.821 42.591,11.486 213.371,11.486 213.371,11.486 0,0 170.78,0 213.371,-11.486 23.497,-6.321 42.003,-24.171 48.284,-47.821 11.412,-42.867 11.412,-132.305 11.412,-132.305 0,0 0,-89.438 -11.412,-132.305 z m -317.51,213.508 v -162.406 l 142.739,81.205 z" id="path2"/>
+									<ellipse style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:33.7196;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="path54" cx="366.40747" cy="371.10568" rx="349.54767" ry="354.24588"/>
+								</svg>
+							</a>
+						</p>
 
 
+					</div>
+					<span style="color:#f6b133;">
+						<span style="font-size:22px;">
+							<strong>Newsletter</strong>
+						</span>
+					</span>
 				</div>
 			</div>
 
@@ -114,14 +157,14 @@
 								</svg>
 							</a>
 						</p>
-						
-						
+
+
 					</div>
-							<span style="color:#f6b133;">
-								<span style="font-size:22px;">
-									<strong>Newsletter</strong>
-								</span>
-							</span>
+					<span style="color:#f6b133;">
+						<span style="font-size:22px;">
+							<strong>Newsletter</strong>
+						</span>
+					</span>
 				</div>
 			</div>
 		</header>
@@ -131,7 +174,7 @@
 				<div id="footer">
 					<div id="footer_top">
 						<ul>
-						
+
 							<li>
 								<a class="lien_footer" href="/drinks-pxl-44.html" target="_blank">BAR</a>
 							</li>
@@ -149,6 +192,7 @@
 					<div id="footer_bottom">L'abus d'alcool est dangereux pour la santé. A consommer avec modération.</div>
 				</div>
 			</footer>
-		<script src="{{asset('js/riorges.js')}}"></script>
-	</body>
-</html>
+			<script src="{{asset('js/riorges.js')}}"></script>
+			<script src="{{asset('js/base.js')}}"></script>
+		</body>
+	</html>

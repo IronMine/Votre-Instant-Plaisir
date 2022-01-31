@@ -1,4 +1,67 @@
-/* BASE */
+/* MOBILE */
+
+#header_mobile_icon,
+#header_mobile {
+    display: none;
+}
+
+.menu-btn {
+    position: relative;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    /* border: 3px solid #fff; */
+}
+
+.menu-btn__burger {
+    width: 50px;
+    height: 6px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+    transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+    transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before {
+    transform: translateY(-16px);
+}
+
+.menu-btn__burger::after {
+    transform: translateY(16px);
+}
+
+.menu-btn.open .menu-btn__burger {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+}
+
+.menu-btn.open .menu-btn__burger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+}
+
+.menu-btn.open .menu-btn__burger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+}
+
+
+/* FOOTER */
 
 #footer ul {
     list-style-type: none;
@@ -38,13 +101,8 @@
     margin: auto;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #efefef;
-    color: #303030;
-    font-family: "Raleway", sans-serif;
-}
+
+/* HEADER */
 
 #header-top {
     background-color: brown;
@@ -82,31 +140,6 @@ body {
     box-sizing: border-box;
 }
 
-#header_icones a {
-    display: inline-block;
-    font-size: 13px;
-    height: 45px;
-    width: 45px;
-    border-radius: 50%;
-    line-height: 45px;
-    text-align: center;
-    align-items: center;
-    vertical-align: center;
-}
-
-.svg_header_top {
-    vertical-align: middle;
-}
-
-#header_icones a:hover {
-    background-color: #f6b133 !important;
-}
-
-#header_icones {
-    display: flex;
-    align-items: center;
-}
-
 .logo {
     text-align: center;
     margin-bottom: 15px;
@@ -117,13 +150,6 @@ body {
 #footer,
 #main_container {
     padding-left: 280px;
-}
-
-#content {
-    padding: 60px 0;
-    width: 100%;
-    max-width: 960px;
-    margin: auto;
 }
 
 #header_menu {
@@ -170,4 +196,439 @@ body {
 
 #header_clickncollect:hover {
     background-color: #7a1e23;
+}
+
+#socials {
+    margin: 10px 0;
+    padding: 20px 0 0 0;
+    border-top: black 1px solid;
+}
+
+
+/* HAPPY HOUR */
+
+#Happy-Hour,
+#Happy-Hour1,
+#Happy-Hour-timer {
+    font-size: 30px;
+    margin-right: 20px;
+}
+
+#Happy-Hour,
+#Happy-Hour1,
+#Happy-Hour-timer {
+    font-size: 30px;
+    margin-right: 20px;
+}
+
+
+/* NAV-BAR */
+
+#header_icons a {
+    display: inline-block;
+    font-size: 13px;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    line-height: 45px;
+    text-align: center;
+    align-items: center;
+    vertical-align: center;
+}
+
+.svg_header_top {
+    vertical-align: middle;
+}
+
+#header_icons div:hover {
+    background-color: #f6b133 !important;
+    transition: 1s;
+}
+
+#header_icons {
+    display: flex;
+    align-items: center;
+}
+
+#header_icons div[id^='icon'] {
+    display: inline-block;
+    font-size: 13px;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    line-height: 45px;
+    text-align: center;
+    align-items: center;
+    vertical-align: center;
+}
+
+.svg_header_top {
+    vertical-align: middle;
+}
+
+#header_icons div:hover {
+    background-color: #f6b133 !important;
+    transition: 0.5s;
+}
+
+#header_icons {
+    display: flex;
+    align-items: center;
+}
+
+#map {
+    position: absolute;
+    z-index: 2;
+    height: 100px;
+    background-color: white;
+    top: 70px;
+}
+
+#map::before {
+    content: "";
+    background: #fff;
+    width: 10px;
+    height: 10px;
+    display: block;
+    -webkit-transform: rotate( 45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate( 45deg);
+    position: absolute;
+    top: -5px;
+    box-shadow: 0px 0px 8px 0px rgb(0 0 0 / 35%);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #efefef;
+    color: #303030;
+    font-family: "Raleway", sans-serif;
+}
+
+@media all and (max-width:1160px) {
+    .menu-btn {
+        display: flex;
+    }
+    .header-left {
+        display: none;
+    }
+    #main_container {
+        padding: 0;
+    }
+    #header-top {
+        margin: 0;
+    }
+    #content {
+        padding: 20px 0;
+        width: 100%;
+        margin: auto;
+        width: 90vw;
+    }
+    #footer {
+        padding: 0;
+    }
+    #moving-bar {
+        left: 0px;
+    }
+    #header_mobile_icon {
+        display: block;
+    }
+    #header_mobile {
+        position: absolute;
+        display: block;
+        transition: 1s;
+        left: -280px;
+        z-index: 1;
+        width: 280px;
+        height: 100%;
+        overflow-y: auto;
+        padding: 20px;
+        background-color: #fff;
+        box-sizing: border-box;
+        text-decoration: none;
+    }
+    #header_clickncollect_mobile {
+        line-height: 50px;
+        text-align: center;
+        height: 50px;
+        background-color: #f6b133;
+        color: #fff !important;
+        transition: all 0.3s;
+    }
+    #header_mobile a div {
+        margin-top: 10px
+    }
+    #header_mobile a {
+        text-decoration: none;
+        font-weight: 900;
+    }
+}
+
+
+/* FONT */
+
+@import url(//db.onlinewebfonts.com/c/2568bb80f5521d55c8c0d536d5bfa5cf?family=Averta-Black);
+@font-face {
+    font-family: "Averta-Black";
+    src: url("//db.onlinewebfonts.com/t/2568bb80f5521d55c8c0d536d5bfa5cf.eot");
+    src: url("//db.onlinewebfonts.com/t/2568bb80f5521d55c8c0d536d5bfa5cf.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/2568bb80f5521d55c8c0d536d5bfa5cf.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/2568bb80f5521d55c8c0d536d5bfa5cf.woff") format("woff"), url("//db.onlinewebfonts.com/t/2568bb80f5521d55c8c0d536d5bfa5cf.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/2568bb80f5521d55c8c0d536d5bfa5cf.svg#Averta-Black") format("svg");
+}
+
+#contact {
+    width: 100%;
+    height: 100%;
+}
+
+.section-header {
+    text-align: center;
+    margin: 0 auto;
+    padding: 40px 0;
+    font: 300 60px 'Oswald', sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+}
+
+.contact-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    max-width: 840px;
+}
+
+
+/* Left contact page */
+
+.form-horizontal {
+    /*float: left;*/
+    max-width: 400px;
+    font-family: 'Lato';
+    font-weight: 400;
+}
+
+.form-control,
+textarea {
+    max-width: 400px;
+    background-color: #000;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.send-button {
+    margin-top: 15px;
+    height: 34px;
+    width: 400px;
+    overflow: hidden;
+    transition: all .2s ease-in-out;
+}
+
+.alt-send-button {
+    width: 400px;
+    height: 34px;
+    transition: all .2s ease-in-out;
+}
+
+.send-text {
+    display: block;
+    margin-top: 10px;
+    font: 700 12px 'Lato', sans-serif;
+    letter-spacing: 2px;
+}
+
+.alt-send-button:hover {
+    transform: translate3d(0px, -29px, 0px);
+}
+
+
+/* Begin Right Contact Page */
+
+.direct-contact-container {
+    max-width: 400px;
+}
+
+
+/* Location, Phone, Email Section */
+
+.contact-list {
+    list-style-type: none;
+    margin-left: -30px;
+    padding-right: 20px;
+}
+
+.list-item {
+    line-height: 4;
+    color: #aaa;
+}
+
+.contact-text {
+    font: 300 18px 'Lato', sans-serif;
+    letter-spacing: 1.9px;
+    color: #bbb;
+}
+
+.place {
+    margin-left: 62px;
+}
+
+.phone {
+    margin-left: 56px;
+}
+
+.gmail {
+    margin-left: 53px;
+}
+
+.contact-text a {
+    color: #bbb;
+    text-decoration: none;
+    transition-duration: 0.2s;
+}
+
+.contact-text a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/* Social Media Icons */
+
+.social-media-list {
+    position: relative;
+    font-size: 22px;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.social-media-list li a {
+    color: #fff;
+}
+
+.social-media-list li {
+    position: relative;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    margin: 10px 3px;
+    line-height: 60px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: rgb(27, 27, 27);
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.social-media-list li:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: 0 0 0 1px #fff;
+    transition: all .2s ease-in-out;
+}
+
+.social-media-list li:hover {
+    background-color: #fff;
+}
+
+.social-media-list li:hover:after {
+    opacity: 1;
+    transform: scale(1.12);
+    transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+}
+
+.social-media-list li:hover a {
+    color: #000;
+}
+
+.copyright {
+    font: 200 14px 'Oswald', sans-serif;
+    color: #555;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+hr {
+    border-color: rgba(255, 255, 255, .6);
+}
+
+
+/* Begin Media Queries*/
+
+@media screen and (max-width: 850px) {
+    .contact-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    .direct-contact-container,
+    .form-horizontal {
+        margin: 0 auto;
+    }
+    .direct-contact-container {
+        margin-top: 60px;
+        max-width: 300px;
+    }
+    .social-media-list li {
+        height: 60px;
+        width: 60px;
+        line-height: 60px;
+    }
+    .social-media-list li:after {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+    }
+}
+
+@media screen and (max-width: 569px) {
+    .direct-contact-container,
+    .form-wrapper {
+        float: none;
+        margin: 0 auto;
+    }
+    .form-control,
+    textarea {
+        margin: 0 auto;
+    }
+    .name,
+    .email,
+    textarea {
+        width: 280px;
+    }
+    .direct-contact-container {
+        margin-top: 60px;
+        max-width: 280px;
+    }
+    .social-media-list {
+        left: 0;
+    }
+    .social-media-list li {
+        height: 55px;
+        width: 55px;
+        line-height: 55px;
+        font-size: 2rem;
+    }
+    .social-media-list li:after {
+        width: 55px;
+        height: 55px;
+        line-height: 55px;
+    }
+}
+
+@media screen and (max-width: 410px) {
+    .send-button {
+        width: 99%;
+    }
 }

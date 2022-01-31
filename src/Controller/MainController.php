@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class MainController extends AbstractController
 {
     /**
-     * @Route("", name="")
+     * @Route("", name="index")
      */
     public function index(): Response
     {
@@ -23,8 +23,16 @@ class MainController extends AbstractController
             'controller_name' => 'MainController',
         ]);
     }
-
-      /**
+    /**
+     * @Route("/events", name="events")
+     */
+    public function indexEvents(): Response
+    {
+        return $this->render('main/events.html.twig', [
+            'controller_name' => 'MainController',
+        ]);
+    }
+    /**
      * @Route("/politique-de-confidentialite", name="confidentialite")
      */
     public function indexConfidentialité(): Response
@@ -33,8 +41,8 @@ class MainController extends AbstractController
             'controller_name' => 'MainController',
         ]);
     }
-     /**
-     * @Route("/mentions-legales", name="Mentions légales")
+    /**
+     * @Route("/mentions-legales", name="mentions_legales")
      */
     public function indexMentions(): Response
     {
@@ -42,5 +50,13 @@ class MainController extends AbstractController
             'controller_name' => 'MainController',
         ]);
     }
-
+    /**
+     * @Route("/contact", name="contact")
+     */
+    public function indexContact(): Response
+    {
+        return $this->render('main/contact.html.twig', [
+            'controller_name' => 'MainController',
+        ]);
+    }
 }
