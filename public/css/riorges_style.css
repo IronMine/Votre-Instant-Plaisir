@@ -199,6 +199,27 @@ tr.new::before {
     font-family: 'Barlow Condensed', sans-serif;
 }
 
+#roue1 {
+    position: absolute;
+    z-index: 2;
+    top: 941px;
+    left: 528px;
+    width: 12%;
+    animation-duration: 4s;
+    animation-name: roue1;
+    animation-direction: normal;
+    /* animation-iteration-count: infinite; */
+}
+
+@keyframes roue1 {
+    from {
+        transform: rotate3d(1, 1, 1, 0deg);
+    }
+    to {
+        transform: rotate3d(1, -1, 1, 360deg);
+    }
+}
+
 
 /* VINS */
 

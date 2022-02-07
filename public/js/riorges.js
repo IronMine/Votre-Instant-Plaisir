@@ -15,7 +15,7 @@ function HappyHourTest(date, hh) {
             hours %= 24;
             minutes %= 60;
             seconds %= 60;
-            let countdown = hours + " : " + minutes + " : " + seconds;
+            let countdown = hours + " h : " + minutes + " m : " + seconds + " s";
             document.getElementById("Happy-Hour-timer").innerText = countdown;
         }
         if (HappyHours == 0) {
@@ -26,6 +26,7 @@ function HappyHourTest(date, hh) {
         }
     } else {
         if (HappyHours == 1) {
+            document.getElementById("Happy-Hour-timer").innerText = "";
             document.getElementById("Happy-Hour").innerText = "";
             HappyHour();
             HappyHours = 0;
