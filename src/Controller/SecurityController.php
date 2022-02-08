@@ -10,6 +10,10 @@ use Symfony\Component\Notifier\Message\ChatMessage;
 use Symfony\Component\Notifier\ChatterInterface;
 
 
+use Symfony\Component\Notifier\Bridge\Telegram\Reply\Markup\Button\InlineKeyboardButton;
+use Symfony\Component\Notifier\Bridge\Telegram\Reply\Markup\InlineKeyboardMarkup;
+use Symfony\Component\Notifier\Bridge\Telegram\TelegramOptions;
+
 class SecurityController extends AbstractController
 {
     /**
@@ -36,13 +40,22 @@ class SecurityController extends AbstractController
     public function thankyou(ChatterInterface $chatter)
     {
 
-
-        $message = (new ChatMessage('You got a new invoice for 15 EUR.'))
-            // if not set explicitly, the message is send to the
-            // default transport (the first one configured)
-            ->transport('telegram');
+        $telegramOptions = (new TelegramOptions())->parseMode('HTML')
+        ->disableWebPagePreview(true)
+        ->disableNotification(true)
+        ->replyMarkup((new InlineKeyboardMarkup())
+            ->inlineKeyboard([
+                (new InlineKeyboardButton('Visit symfony.com'))
+                    ->url('https://symfony.com/'),
+            ])
+        );
+        $message = (new ChatMessage('<b>bold <i>italic bold <s>italic bold strikethrough <span class="tg-spoiler">italic bold strikethrough spoiler</span></s> <u>underline italic bold</u></i> bold</b>'))
+        ->transport('telegram');
+        
+        $message->options($telegramOptions);
 
         $sentMessage = $chatter->send($message);
+
 
         // ...
     }
