@@ -5,7 +5,7 @@ body body.light-mode {
     padding: 0;
     background-color: #cecece;
     color: #303030;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Barlow';
     --dark-background: white;
     transition: all 0.3s;
 }
@@ -25,7 +25,7 @@ body.dark-mode {
     color: #eee;
     background: rgb(61 67 75);
     --dark-background: rgb(42 46 50);
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Barlow';
     margin: 0;
     padding: 0;
 }
@@ -36,7 +36,7 @@ body.dark-mode {
         padding: 0;
         background-color: #cecece;
         color: #303030;
-        font-family: "Raleway", sans-serif;
+        font-family: "Barlow";
         --dark-background: white;
     }
     body {
@@ -45,7 +45,7 @@ body.dark-mode {
         --dark-background: rgb(42 46 50);
         margin: 0;
         padding: 0;
-        font-family: "Raleway", sans-serif;
+        font-family: "Barlow";
         transition: all 0.3s;
     }
 }
@@ -154,9 +154,8 @@ tr.new::before {
 
 .titre_produit {
     font-weight: 900;
+    font-size: 1.7rem;
 }
-
-.produit {}
 
 .nav-items {
     font-family: 'Averta-Black', sans-serif;
@@ -184,16 +183,12 @@ tr.new::before {
     left: 280px;
 }
 
-.moving-bar {}
-
 .description_produit {
     font-style: italic;
 }
 
 
 /* SKATE */
-
-.shooters {}
 
 #animation_skate {
     animation-name: skate;
@@ -934,4 +929,9 @@ td.heart {
     font-family: "Averta-Black";
     src: url("//db.onlinewebfonts.com/t/2568bb80f5521d55c8c0d536d5bfa5cf.eot");
     src: url("//db.onlinewebfonts.com/t/2568bb80f5521d55c8c0d536d5bfa5cf.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/2568bb80f5521d55c8c0d536d5bfa5cf.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/2568bb80f5521d55c8c0d536d5bfa5cf.woff") format("woff"), url("//db.onlinewebfonts.com/t/2568bb80f5521d55c8c0d536d5bfa5cf.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/2568bb80f5521d55c8c0d536d5bfa5cf.svg#Averta-Black") format("svg");
+}
+
+@font-face {
+    font-family: Barlow;
+    src: url(../fonts/barlow/BarlowCondensed-Bold.otf);
 }
