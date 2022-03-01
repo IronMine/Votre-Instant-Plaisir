@@ -1,4 +1,15 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_row(form.name) }}
+{{ form_row(form.crud) }}
+{{ form_row(form.parent) }}
+
+{# {{ form_row(form.franchise) }} #}
+
+<div {% if not is_granted('ROLE_ADMIN') %}style="display: none;" value="1"{% endif %}>{{ form_row(form.type) }}</div>
+
+{{ form_row(form.position) }}
+
+
+{{ form_row(form.image) }}
+<button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

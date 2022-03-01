@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ImagesRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -28,9 +30,15 @@ class Images
     private $items;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Categories::class, inversedBy="image")
+     * @ORM\OneToMany(targetEntity=Categories::class, mappedBy="image")
      */
     private $categories;
+
+    public function __construct()
+    {
+        $this->categories = new ArrayCollection();
+    }
+
 
     public function getId(): ?int
     {
@@ -61,15 +69,34 @@ class Images
         return $this;
     }
 
-    public function getCategories(): ?Categories
+    /**
+     * @return Collection|Categories[]
+     */
+    public function getCategories(): Collection
     {
         return $this->categories;
     }
 
-    public function setCategories(?Categories $categories): self
+    public function addCategory(Categories $category): self
     {
-        $this->categories = $categories;
+        if (!$this->categories->contains($category)) {
+            $this->categories[] = $category;
+            $category->setImage($this);
+        }
 
         return $this;
     }
+
+    public function removeCategory(Categories $category): self
+    {
+        if ($this->categories->removeElement($category)) {
+            // set the owning side to null (unless already changed)
+            if ($category->getImage() === $this) {
+                $category->setImage(null);
+            }
+        }
+
+        return $this;
+    }
+
 }

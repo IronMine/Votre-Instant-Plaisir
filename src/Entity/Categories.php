@@ -50,12 +50,6 @@ class Categories
     private $franchise;
 
     /**
-     * @ORM\OneToMany(targetEntity=Images::class, mappedBy="categories")
-     */
-    private $image;
-
-
-    /**
      * @ORM\Column(type="integer", nullable=true)
      */
     private $position;
@@ -66,10 +60,14 @@ class Categories
      */
     private $type;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Images::class, inversedBy="categories")
+     */
+    private $image;
+
     public function __construct()
     {
         $this->parent_id = new ArrayCollection();
-        $this->items = new ArrayCollection();
         $this->image = new ArrayCollection();
     }
 
@@ -186,35 +184,7 @@ class Categories
         return $this;
     }
 
-    /**
-     * @return Collection|Images[]
-     */
-    public function getImage(): Collection
-    {
-        return $this->image;
-    }
 
-    public function addImage(Images $image): self
-    {
-        if (!$this->image->contains($image)) {
-            $this->image[] = $image;
-            $image->setCategories($this);
-        }
-
-        return $this;
-    }
-
-    public function removeImage(Images $image): self
-    {
-        if ($this->image->removeElement($image)) {
-            // set the owning side to null (unless already changed)
-            if ($image->getCategories() === $this) {
-                $image->setCategories(null);
-            }
-        }
-
-        return $this;
-    }
 
 
     public function getPosition(): ?int
@@ -237,6 +207,18 @@ class Categories
     public function setType(Type $type): self
     {
         $this->type = $type;
+
+        return $this;
+    }
+
+    public function getImage(): ?Images
+    {
+        return $this->image;
+    }
+
+    public function setImage(?Images $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }

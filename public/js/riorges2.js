@@ -106,6 +106,7 @@ function currentTime() {
 
 currentTime();
 
+
 lastMovingBar = "";
 lastMovingBarId = "";
 first = document.getElementsByClassName("active");
@@ -114,11 +115,17 @@ movingBar = document.getElementById("moving-bar");
 
 for (let item of first) {
     lastMovingBar = item;
+    el = item;
     width = item.offsetWidth + "px"
     movingBar.style.width = width;
 };
 
+
+
+
 function movingbar(el, id) {
+
+
     position_left = el.getBoundingClientRect().left
     width = el.offsetWidth + "px"
     movingBar.style.width = width;
@@ -129,7 +136,6 @@ function movingbar(el, id) {
 
     show = document.getElementById(id)
 
-    console.log(lastMovingBarId);
 
     if (lastMovingBarId == "") {
         hide = document.getElementById(1);
@@ -143,7 +149,22 @@ function movingbar(el, id) {
 
     lastMovingBar = el;
     lastMovingBarId = id;
+
 }
+
+
+window.addEventListener('resize', WindowSize);
+
+function WindowSize() {
+    console.log(lastMovingBar);
+
+    position_left = lastMovingBar.getBoundingClientRect().left
+    width = lastMovingBar.offsetWidth + "px"
+    movingBar.style.width = width;
+    movingBar.style.left = position_left + 'px';
+
+}
+
 
 
 // SKATE ANIMATION

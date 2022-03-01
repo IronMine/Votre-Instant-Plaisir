@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Categories;
+use App\Entity\Images;
+use App\Entity\Type;
 use App\Form\CategoriesType;
 use App\Repository\CategoriesRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -22,12 +24,16 @@ class CategoriesController extends AbstractController
     public function index(CategoriesRepository $categoriesRepository): Response
     {
         if ($this->isGranted('ROLE_ADMIN_RIORGES')) {
-           $categories = $categoriesRepository->findBy(['franchise' => 1]);
-        }   
+            $categories = $categoriesRepository->findBy(['franchise' => 1]);
+        }
+
+        if ($this->isGranted('ROLE_ADMIN')) {
+            $categories = $categoriesRepository->findAll();
+        }
 
         return $this->render('categories/index.html.twig', [
-                'categories' => $categories,
-            ]);
+            'categories' => $categories,
+        ]);
     }
 
     /**
@@ -36,20 +42,52 @@ class CategoriesController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $category = new Categories();
+
+        // $type = $entityManager->getRepository(Type::class)->findAll();
+
         $form = $this->createForm(CategoriesType::class, $category);
         $form->handleRequest($request);
 
+
+
         if ($form->isSubmitted() && $form->isValid()) {
 
+
+            $images = $form->get('image')->getData();
+            // $images = $form->getData()->getImage()->getFile();
+
+            // dd($images);
+
+            $fichier = md5(uniqid()) . '.' . $images->guessExtension();
+
+            $images->move(
+                $this->getParameter('images_directory'),
+                $fichier
+            );
+
+            $img = new Images();
+            $img->setName($fichier);
+
+
+            $entityManager->persist($img);
+
+            $entityManager->flush();
+
+            $category->setImage($img);
+
+
             $entityManager->persist($category);
+
             $entityManager->flush();
 
             return $this->redirectToRoute('categories_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('categories/new.html.twig', [
+
+        return $this->render('categories/new.html.twig', [
             'category' => $category,
-            'form' => $form,
+            'form' => $form->createView(),
+            // 'type' => $type,
         ]);
     }
 
@@ -88,7 +126,7 @@ class CategoriesController extends AbstractController
      */
     public function delete(Request $request, Categories $category, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$category->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $category->getId(), $request->request->get('_token'))) {
             $entityManager->remove($category);
             $entityManager->flush();
         }

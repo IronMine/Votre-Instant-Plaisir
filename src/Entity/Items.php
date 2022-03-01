@@ -69,6 +69,11 @@ class Items
      */
     private $franchise;
 
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $price;
+
     public function __construct()
     {
         $this->image = new ArrayCollection();
@@ -213,6 +218,18 @@ class Items
     public function setFranchise(?Franchises $franchise): self
     {
         $this->franchise = $franchise;
+
+        return $this;
+    }
+
+    public function getPrice(): ?float
+    {
+        return $this->price;
+    }
+
+    public function setPrice(?float $price): self
+    {
+        $this->price = $price;
 
         return $this;
     }

@@ -30,7 +30,10 @@
 					<div class="menu-btn__burger"></div>
 				</div>RIORGES-<div id="status"></div>
 
-				<div id="header_search"></div>
+				<div id="header_search"><input type="checkbox" id="toggle" class="toggle--checkbox">
+				<label for="toggle" class="toggle--label" onclick="switchToggle()">
+					<span class="toggle--label-background"></span>
+				</label></div>
 				<div id="header_icons">
 
 					<div id="icon_map">
@@ -192,7 +195,8 @@
 					<div id="footer_bottom">L'abus d'alcool est dangereux pour la santé. A consommer avec modération.</div>
 				</div>
 			</footer>
-			<script src="{{asset('js/riorges.js')}}"></script>
+			{# <script src="{{asset('js/riorges.js')}}"></script> #}
+			<script src="{{asset('js/riorges2.js')}}"></script>
 			<script src="{{asset('js/base.js')}}"></script>
 		</body>
 	</html>

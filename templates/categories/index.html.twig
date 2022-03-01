@@ -22,7 +22,7 @@
                 <td>{{ category.id }}</td>
                 <td>{{ category.name }}</td>
                 <td>{{ category.crud }}</td>
-                <td>{{ category.type }}</td>
+                <td>{{ category.type.name }}</td>
                 <td>{{ category.position }}</td>
                 <td>
                     <a href="{{ path('categories_show', {'id': category.id}) }}">show</a>

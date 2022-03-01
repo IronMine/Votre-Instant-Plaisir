@@ -40,9 +40,15 @@ class Type
      */
     private $categories;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Commandes::class, mappedBy="Type")
+     */
+    private $commandes;
+
     public function __construct()
     {
         $this->items = new ArrayCollection();
+        $this->commandes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -117,6 +123,36 @@ class Type
         }
 
         $this->categories = $categories;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Commandes[]
+     */
+    public function getCommandes(): Collection
+    {
+        return $this->commandes;
+    }
+
+    public function addCommande(Commandes $commande): self
+    {
+        if (!$this->commandes->contains($commande)) {
+            $this->commandes[] = $commande;
+            $commande->setType($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommande(Commandes $commande): self
+    {
+        if ($this->commandes->removeElement($commande)) {
+            // set the owning side to null (unless already changed)
+            if ($commande->getType() === $this) {
+                $commande->setType(null);
+            }
+        }
 
         return $this;
     }

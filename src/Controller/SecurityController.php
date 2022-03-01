@@ -34,7 +34,7 @@ class SecurityController extends AbstractController
     }
 
     /**
-     * @Route("/test", name="login")
+     * @Route("/test", name="telegram")
      */
 
     public function thankyou(ChatterInterface $chatter)
@@ -57,7 +57,10 @@ class SecurityController extends AbstractController
         $sentMessage = $chatter->send($message);
 
 
-        // ...
+        return $this->render('admin/index.html.twig', [
+            'controller_name' => 'AdminController',
+        ]);
+
     }
 
 

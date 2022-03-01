@@ -6,6 +6,12 @@
 {% block body %}
 	<main>
 
+		<div id="loader">
+			<img src="/uploads/tigre.svg" class="svg light">
+			<img src="/uploads/tigre-dark.svg" class="svg dark" style="display:none">
+
+		</div>
+
 
 
 		<div class="flex">
@@ -14,16 +20,16 @@
 			<div id="Happy-Hour1"></div>
 		</div>
 
-{# 
-		<div id="nav-bar-carte">
-			<div class="nav-items active" onclick="movingbar(this,1)">BIERES</div>
-			<div class="nav-items" onclick="movingbar(this,2)">COCKTAILS</div>
-			<div class="nav-items" onclick="movingbar(this,3)">VINS,&nbsp;APERO,&nbsp;SOFT</div>
-			<div class="nav-items" onclick="movingbar(this)">ALCOOL&nbsp;FORT</div>
-			<div class="nav-items" onclick="movingbar(this)">DEGUSTATION</div>
-			<div class="nav-items" onclick="movingbar(this,6)">TAPAS</div>
-			<div class="nav-items" onclick="movingbar(this,7)">SKATES</div>
-		</div> #}
+		{# 
+				<div id="nav-bar-carte">
+					<div class="nav-items active" onclick="movingbar(this,1)">BIERES</div>
+					<div class="nav-items" onclick="movingbar(this,2)">COCKTAILS</div>
+					<div class="nav-items" onclick="movingbar(this,3)">VINS,&nbsp;APERO,&nbsp;SOFT</div>
+					<div class="nav-items" onclick="movingbar(this)">ALCOOL&nbsp;FORT</div>
+					<div class="nav-items" onclick="movingbar(this)">DEGUSTATION</div>
+					<div class="nav-items" onclick="movingbar(this,6)">TAPAS</div>
+					<div class="nav-items" onclick="movingbar(this,7)">SKATES</div>
+				</div> #}
 		<table id="nav-bar-carte">
 			<tbody>
 				<tr>
@@ -42,7 +48,10 @@
 		</div>
 		<div id="content">
 			<div id="1">
-			<input type="button" value="HAPPY HOUR" onclick="HappyHour()">
+
+
+
+				<input type="button" value="HAPPY HOUR" onclick="HappyHour()">
 				<div id="content-title">
 					BIERES
 				</div>
@@ -66,10 +75,14 @@
 								</td>
 								<td rowspan="10" id="td-prix-bieres">
 									<div id="prix-bieres">
-										<img src="/uploads/prix-bieres.svg" class="" width="100%">
+										<img
+										src="/uploads/prix-bieres.svg" class="svg light" width="100%">
+									<img src="/uploads/prix-bieres-dark.svg" class="svg dark" width="100%" style="display:none">
 									</div>
 									<div id="prix-bieres-HH" style="display:none">
-										<img src="/uploads/prix-bieres-HH.svg" class="" width="100%">
+										<img
+										src="/uploads/prix-bieres-HH.svg" class="svg light" width="100%">
+									<img src="/uploads/prix-bieres-HH-dark.svg" class="svg dark" width="100%"style="display:none">
 									</div>
 								</td>
 							</tr>
@@ -1382,12 +1395,14 @@
 				</div>
 
 				<div id="skate">
-					<img src="/uploads/shooters.svg" class="shooters" width="100%">
-					<img src="/uploads/skates.svg" id="animation_skate" width="100%">
-					{# <img src="/uploads/roue1.svg" id="roue1"> #}
-					{# <img src="/uploads/shot.svg" id="shot"> #}
-					{# lt --port 8000  #}
-					</div>
+					<img src="/uploads/shooters.svg" class="shooters svg light" width="100%">
+					<img src="/uploads/shooters-dark.svg" class="shooters svg dark" style="display:none" width="100%">
+					<img src="/uploads/skates.svg" class="svg light" id="animation_skate" width="100%">
+					<img
+					src="/uploads/skates-dark.svg" class="svg dark" style="display:none" id="animation_skate" width="100%">
+
+				{# lt --port 8000  #}
+				</div>
 			</div>
 		</div>
 		<div id="clock" onload="currentTime()"></div>
