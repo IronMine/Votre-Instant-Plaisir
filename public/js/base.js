@@ -44,16 +44,15 @@ function mobileNavbar() {
 
 
 // LOAD 
-
+const imgs = document.querySelectorAll('[data-src]');
 
 window.onload = loader;
 
 function loader() {
     document.getElementById('loader').innerHTML = "";
     document.getElementById('loader').style.display = "none";
+    lazyload();
 }
-
-
 
 
 const btn = document.querySelector(".btn-toggle");
@@ -74,6 +73,29 @@ if (currentTheme == "dark") {
     if (document.getElementById('toggle').checked == true) {
         document.getElementById('toggle').checked = false;
 
+    }
+}
+opositeTheme = 0;
+
+function lazyload() {
+    if (opositeTheme == 1) {
+        if (currentTheme == "dark") {
+            dataSrcToSrc("light");
+        } else {
+            dataSrcToSrc("dark");
+        }
+        return;
+    }
+    dataSrcToSrc(currentTheme);
+    opositeTheme = 1;
+    setTimeout(lazyload, 20000);
+}
+
+function dataSrcToSrc(ThemeSrc) {
+    for (img of imgs) {
+        if (img.classList.contains(ThemeSrc)) {
+            img.src = img.dataset.src;
+        }
     }
 }
 

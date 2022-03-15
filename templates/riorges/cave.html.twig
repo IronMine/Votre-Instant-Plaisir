@@ -5,9 +5,13 @@
 {% block body %}
 <div id="header_cave">CAVE</div>
 
+<div id="cave">
 {% for categorie in categories %}
     <pre>
-        {{ dump(categorie) }}
+        {{ dump(categorie.image.name) }}
     </pre>
+<img src="/categories/{{categorie.image.name}}" alt="">
+
 {% endfor %}
+</div>
 {% endblock %}

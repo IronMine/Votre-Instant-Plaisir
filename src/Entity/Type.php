@@ -35,20 +35,22 @@ class Type
      */
     private $franchise;
 
-    /**
-     * @ORM\OneToOne(targetEntity=Categories::class, mappedBy="type", cascade={"persist", "remove"})
-     */
-    private $categories;
 
     /**
      * @ORM\OneToMany(targetEntity=Commandes::class, mappedBy="Type")
      */
     private $commandes;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Categories::class, mappedBy="type")
+     */
+    private $categories;
+
     public function __construct()
     {
         $this->items = new ArrayCollection();
         $this->commandes = new ArrayCollection();
+        $this->categories = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -151,6 +153,28 @@ class Type
             // set the owning side to null (unless already changed)
             if ($commande->getType() === $this) {
                 $commande->setType(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function addCategory(Categories $category): self
+    {
+        if (!$this->categories->contains($category)) {
+            $this->categories[] = $category;
+            $category->setType($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCategory(Categories $category): self
+    {
+        if ($this->categories->removeElement($category)) {
+            // set the owning side to null (unless already changed)
+            if ($category->getType() === $this) {
+                $category->setType(null);
             }
         }
 

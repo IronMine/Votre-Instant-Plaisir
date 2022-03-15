@@ -55,15 +55,14 @@ class Categories
     private $position;
 
     /**
-     * @ORM\OneToOne(targetEntity=Type::class, inversedBy="categories", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $type;
-
-    /**
      * @ORM\ManyToOne(targetEntity=Images::class, inversedBy="categories")
      */
     private $image;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Type::class, inversedBy="categories")
+     */
+    private $type;
 
     public function __construct()
     {
@@ -199,18 +198,6 @@ class Categories
         return $this;
     }
 
-    public function getType(): ?Type
-    {
-        return $this->type;
-    }
-
-    public function setType(Type $type): self
-    {
-        $this->type = $type;
-
-        return $this;
-    }
-
     public function getImage(): ?Images
     {
         return $this->image;
@@ -219,6 +206,18 @@ class Categories
     public function setImage(?Images $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getType(): ?Type
+    {
+        return $this->type;
+    }
+
+    public function setType(?Type $type): self
+    {
+        $this->type = $type;
 
         return $this;
     }

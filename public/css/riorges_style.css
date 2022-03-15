@@ -8,6 +8,7 @@ body body.light-mode {
     font-family: 'Barlow';
     --dark-background: white;
     transition: all 0.3s;
+    --color-link: black;
 }
 
 #content {
@@ -23,6 +24,7 @@ body body.light-mode {
 
 body.dark-mode {
     color: #eee;
+    --color-link: #white;
     background: rgb(61 67 75);
     --dark-background: rgb(42 46 50);
     font-family: 'Barlow';
@@ -38,11 +40,13 @@ body.dark-mode {
         color: #303030;
         font-family: "Barlow";
         --dark-background: white;
+        --color-link: black;
     }
     body {
         color: #eee;
         background: rgb(61 67 75);
         --dark-background: rgb(42 46 50);
+        --color-link: #white;
         margin: 0;
         padding: 0;
         font-family: "Barlow";
@@ -130,6 +134,9 @@ tr.new::before {
     background-color: red;
 }
 
+
+/* CAVE */
+
 #header_cave {
     background-image: url(https://www.brasserie-vip.com/images/Image/cave%20bandeau.jpg);
     height: 245px;
@@ -144,8 +151,15 @@ tr.new::before {
     font-size: 2em;
 }
 
-#header_cave::after {
+#header_cave:after {
     background: radial-gradient(circle, rgba(0, 0, 0, .45) 0%, rgba(0, 0, 0, .7) 100%);
+}
+
+#cave {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 800px;
+    margin: auto;
 }
 
 .flex {
@@ -459,10 +473,13 @@ td.heart {
 }
 
 #footer {
+    padding: 0;
     background-color: #000;
     border-top-style: none;
     font-weight: 500;
     color: #fff;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.7rem;
 }
 
 #footer_bottom {
@@ -535,6 +552,8 @@ td.heart {
     font-weight: 900;
     text-align: center !important;
     color: #fff !important;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5rem;
 }
 
 #header_menu a {
@@ -555,7 +574,7 @@ td.heart {
 
 #link {
     padding: 10px 10px;
-    color: black;
+    color: var(--color-link);
     display: inline-block;
 }
 
@@ -684,6 +703,9 @@ td.heart {
 }
 
 @media all and (max-width:1160px) {
+    #footer {
+        padding-left: 0;
+    }
     .header-left {
         display: none;
     }
@@ -705,9 +727,6 @@ td.heart {
         margin: auto;
         width: 90vw;
     }
-    #footer {
-        padding: 0;
-    }
     #moving-bar {
         left: 0px;
     }
@@ -727,6 +746,8 @@ td.heart {
         background-color: var(--dark-background);
         box-sizing: border-box;
         text-decoration: none;
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.5rem;
     }
     #header_clickncollect_mobile {
         line-height: 50px;
